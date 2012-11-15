@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['followers_manage']			= 'Manage Followers';
+$lang['followers_edit']				= 'Edit';
+$lang['followers_true']				= 'True';
+$lang['followers_false']				= 'False';
+$lang['followers_create']			= 'Create';
+$lang['followers_list']				= 'List';
+$lang['followers_new']				= 'New';
+$lang['followers_edit_text']			= 'Edit this to suit your needs';
+$lang['followers_no_records']			= 'There aren\'t any followers in the system.';
+$lang['followers_create_new']			= 'Create a new Followers.';
+$lang['followers_create_success']			= 'Followers successfully created.';
+$lang['followers_create_failure']			= 'There was a problem creating the followers: ';
+$lang['followers_create_new_button']			= 'Create New Followers';
+$lang['followers_invalid_id']			= 'Invalid Followers ID.';
+$lang['followers_edit_success']			= 'Followers successfully saved.';
+$lang['followers_edit_failure']			= 'There was a problem saving the followers: ';
+$lang['followers_delete_success']			= 'record(s) successfully deleted.';
+$lang['followers_delete_failure']			= 'We could not delete the record: ';
+$lang['followers_delete_error']			= 'You have not selected any records to delete.';
+$lang['followers_actions']			= 'Actions';
+$lang['followers_cancel']			= 'Cancel';
+$lang['followers_delete_record']			= 'Delete this Followers';
+$lang['followers_delete_confirm']			= 'Are you sure you want to delete this followers?';
+$lang['followers_edit_heading']			= 'Edit Followers';
+
+// Activities
+$lang['followers_act_create_record']			= 'Created record with ID';
+$lang['followers_act_edit_record']			= 'Updated record with ID';
+$lang['followers_act_delete_record']			= 'Deleted record with ID';
