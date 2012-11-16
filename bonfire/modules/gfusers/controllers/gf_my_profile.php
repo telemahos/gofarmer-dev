@@ -67,14 +67,14 @@ class gf_my_profile extends Authenticated_Controller {
 		Template::set('total_followers', $total_followers);
 
 		// get user's crops
-		$user_crops = $this->crop_model->get_user_crops($this->current_user->id);
+		$user_crops = $this->crop_model->get_user_limit_crops($this->current_user->id, 5, 0);
 		$count_user_crops = array('user_id' => $this->current_user->id, 'crop.deleted' => 0); 
 		$total_crops =  $this->crop_model->count_by($count_user_crops);
 		Template::set('total_crops', $total_crops);
 		Template::set('user_crops', $user_crops);
 
 		// get user's crop offers
-		$user_croffers = $this->croffer_model->get_user_croffers($this->current_user->id);
+		$user_croffers = $this->croffer_model->get_user_limit_croffers($this->current_user->id, 5, 0);
 		$count_user_croffers = array('user_id' => $this->current_user->id, 'crop_offer.deleted' => 0); 
 		$total_croffers =  $this->croffer_model->count_by($count_user_croffers);
 		Template::set('total_croffers', $total_croffers);

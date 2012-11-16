@@ -37,5 +37,27 @@ class Croffer_model extends BF_Model {
 		return parent::find_all();
 	}
 
+	//--------------------------------------------------------------------
+
+	/**
+	*	Method: get_user_croffers()
+	*
+	*	Get all crop offers of the list from thw current user.
+	*
+	* @param int $return_type Choose the type of return type. 0 - Object, 1 - Array
+	*
+	* @return mixed An array of objects/arrays representing the results, or FALSE on failure or empty set.
+	*/
+	public function get_user_limit_croffers($user_id  = NULL, $limit, $offset)
+	{
+		$this->db->select('*')->where('user_id',$user_id)
+								->limit($limit,$offset);
+
+		$this->db->join('crop_crops', 'crop_crops.crop_crops_id = crop_offer.crop_id', 'left');
+		$this->db->join('crop_variety', 'crop_variety.crop_variety_id = crop_offer.variety_id', 'left'); 
+
+		return parent::find_all();
+	}
+
 
 }

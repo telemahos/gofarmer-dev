@@ -109,9 +109,31 @@ class Crop_model extends BF_Model {
 	*
 	* @return mixed An array of objects/arrays representing the results, or FALSE on failure or empty set.
 	*/
-	public function get_user_crops($id)
+	public function get_user_crops($id = NULL)
 	{
 		$this->db->select('*')->where('user_id',$id);
+
+		$this->db->join('crop_crops', 'crop_crops.crop_crops_id = crop.crop', 'left');
+		$this->db->join('crop_variety', 'crop_variety.crop_variety_id = crop.variety', 'left'); 
+
+		return parent::find_all();
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	*	Method: get_user_crops()
+	*
+	*	Get all crops of the list from thw current user.
+	*
+	* @param int $return_type Choose the type of return type. 0 - Object, 1 - Array
+	*
+	* @return mixed An array of objects/arrays representing the results, or FALSE on failure or empty set.
+	*/
+	public function get_user_limit_crops($id = NULL, $limit, $offset)
+	{
+		$this->db->select('*')->where('user_id',$id)
+								->limit($limit,$offset);
 
 		$this->db->join('crop_crops', 'crop_crops.crop_crops_id = crop.crop', 'left');
 		$this->db->join('crop_variety', 'crop_variety.crop_variety_id = crop.variety', 'left'); 

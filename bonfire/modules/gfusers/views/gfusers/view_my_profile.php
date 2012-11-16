@@ -1,5 +1,7 @@
 <div class="page-header">
-<h4>Οι καλλιέργειές μου <small>&nbsp;Subtext for header</small>&nbsp;<span class="badge"><?php echo $total_crops; ?> </span>
+<!-- View User's crops -->
+<!-- ################################################################## -->
+<h4>Οι καλλιέργειές μου <small>&nbsp;Subtext for header</small>&nbsp;<?php if($total_crops > 0): ?><span class="badge"><?php echo $total_crops; ?> </span><?php endif; ?>
 <div class="btn-group pull-right">
 	<!-- <button class="btn btn-link" type="submit"><i class="icon-cog"></i></button> -->
 	<button class="btn btn-mini btn-link dropdown-toggle " data-toggle="dropdown">
@@ -13,7 +15,7 @@
 </h4>
 </div>
 
- <!-- View User's crops -->
+
 <?php if (isset($user_crops) && is_array($user_crops) && count($user_crops)) : ?>
 <table class='table table-condensed table-hover table-bordered'>
 <!-- <caption></caption> -->
@@ -33,21 +35,33 @@
 			<?php foreach ($user_crops as $crops) : ?>
 				<tr class="center">
 					<td><a href="<?php echo $crops->crops_gr; ?>"><b><?php echo $crops->crops_gr; ?></b></a></td>
-					<td class='muted'><?php echo $crops->crop_variety_gr; ?></td>
-					<td class='muted'><b><?php echo $crops->hectar; ?></b></td>
-					<td class='muted'><?php echo $crops->certification; ?></td>
+					<td class='muted'><em><?php echo $crops->crop_variety_gr; ?></em></td>
+					<td class='muted'><b><?php echo $crops->hectar . '</b> στρ'; ?></td>
+					<td class='muted'>
+						<?php if($crops->certification == 0) : ?>
+							<?php echo 'Συμβατική Καλλιέργεια'; ?>
+						<?php elseif ($crops->certification == 1) : ?>
+							<?php echo '<span class="text-info">Ολοκληρωμένη Διαχείρηση</span>'; ?>
+						<?php else : ?>
+							<?php echo '<span class="text-success">Βιολογική Καλλιέργεια</span>'; ?>
+						<?php endif ?>
+					</td>
 					<!-- <td><?php //echo $crops->comment; ?></td> -->
 				</tr>
 			<?php endforeach; ?>
 		<?php endif; ?>
 	</tbody>
 </table>
+	<?php if($total_crops > 5) : ?>
+		<div class='pull-right'><a href="#">see more...</a></div>
+	<?php endif; ?>
 <?php endif; ?>
 
 <br>
+<!-- ################################################################## -->
 <!-- View User's crop Offers -->
 <div class="page-header">
-<h4>Οι προσφορές μου <small>&nbsp;Subtext for header </small>&nbsp;<span class="badge"><?php echo $total_croffers; ?> </span>
+<h4>Οι προσφορές μου <small>&nbsp;Subtext for header </small>&nbsp;<?php if($total_croffers > 0): ?><span class="badge"><?php echo $total_croffers; ?> </span><?php endif; ?>
 <div class="btn-group pull-right">
 	<!-- <button class="btn btn-link" type="submit"><i class="icon-cog"></i></button> -->
 	<button class="btn btn-mini btn-link dropdown-toggle " data-toggle="dropdown">
@@ -79,7 +93,7 @@
 				<tr class="center">
 					<td><a href="<?php echo $croffers->crops_gr; ?>"><b><?php echo $croffers->crops_gr; ?></b></a></td>
 					<td class='muted'><?php echo $croffers->crop_variety_gr; ?></td>
-					<td class='muted'><b><?php echo $croffers->quantity . ' Τόνοι'; ?></b></td>
+					<td class='muted'><b><?php echo $croffers->quantity . '</b> Τόνοι'; ?></td>
 					<td class='muted'><b><?php echo $croffers->price  . ' &#8364;</b> / ανά τόνο '; ?></td>
 					<!-- <td><?php //echo $crops->comment; ?></td> -->
 				</tr>
@@ -87,14 +101,16 @@
 		<?php endif; ?>
 	</tbody>
 </table>
+	<?php if($total_crops > 5) : ?>
+		<div class='pull-right'><a href="#">see more...</a></div>
+	<?php endif; ?>
 <?php endif; ?>
-
 <br>
+<!-- ################################################################## -->
 <!-- View User's Demands -->
-<div class="page-header">
+<!-- <div class="page-header">
 <h4>Οι ζητήσεις μου <small>Subtext for header</small>
 <div class="btn-group pull-right">
-	<!-- <button class="btn btn-link" type="submit"><i class="icon-cog"></i></button> -->
 	<button class="btn btn-mini btn-link dropdown-toggle " data-toggle="dropdown">
 		<span class="caret"></span>
 	</button>
@@ -103,12 +119,12 @@
 	</ul>
 </div>
 </h4>
-</div>
-
-<br>
+</div> 
+<br>-->
+<!-- ################################################################## -->
 <!-- View User's Questions -->
 <div class="page-header">
-<h4>Οι ερωτήσεις μου <small>Subtext for header</small>&nbsp;<span class="badge"><?php echo $total_questions; ?></span>
+<h4>Οι ερωτήσεις μου <small>Subtext for header</small>&nbsp;<?php if($total_questions > 0): ?><span class="badge"><?php echo $total_questions; ?></span><?php endif; ?>
 <div class="btn-group pull-right">
 	<!-- <button class="btn btn-link" type="submit"><i class="icon-cog"></i></button> -->
 	<button class="btn btn-mini btn-link dropdown-toggle " data-toggle="dropdown">
@@ -137,6 +153,7 @@
 </div>
 
 <br>
+<!-- ################################################################## -->
 <!-- View User's Anounce's -->
 <!-- <div class="page-header">
 <h4>Οι αγγελίες μου <small>Subtext for header</small>
@@ -152,6 +169,7 @@
 </div> -->
 
 <!-- <br> -->
+<!-- ################################################################## -->
 <!-- View User's Groups -->
 <!-- <div class="page-header">
 <h4>Οι ομάδες μου <small>Subtext for header</small>
@@ -167,6 +185,7 @@
 </div> -->
 
 <!-- <br> -->
+<!-- ################################################################## -->
 <!-- View User's Event -->
 <!-- <div class="page-header">
 <h4>Οι εκδηλώσεις μου <small>Subtext for header</small>
