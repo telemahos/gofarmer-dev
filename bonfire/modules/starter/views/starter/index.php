@@ -1,4 +1,3 @@
-<br>
 <?php if  (!isset($current_user->email)) : ?>
 <div class="row-fluid">
 	<div class="span8">
@@ -100,7 +99,7 @@
 
 		<!-- REGISTRATION FROM -->
 		<?php echo form_open('user_registration', array('class' => "form-horizontal", 'autocomplete' => 'off')); ?>
-		<div class='well  start-screen'>
+		<div class='well well-small start-screen'>
 			<div>
 				<h4 class="page-header"><?php echo lang('starter_start_screen_registration_main_title'); ?><small>   <?php echo lang('starter_start_screen_registration_seconadry_title'); ?></small></h4>
 			</div>
@@ -141,10 +140,11 @@
 				// Allow modules to render custom fields
 				Events::trigger('render_user_form');
 			?>
+			<br>
 			<div class="">
 				<label class="" for="submit">&nbsp;Κάνοντας εγγραφή, συμφωνείτε με τους <a href="#">όρους χρήσης</a></label>
 			</div>
-			<hr>
+			<!-- <hr> -->
 			<div class="">
 				<div class="">
 					<input class="btn btn-large btn-success btn-block " type="submit" name="submit" id="submit" value="<?php echo lang('us_register'); ?>"  />

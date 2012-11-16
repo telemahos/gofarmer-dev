@@ -1,5 +1,5 @@
 <div class="page-header">
-<h4>Οι καλλιέργειές μου <small>Subtext for header</small>
+<h4>Οι καλλιέργειές μου <small>&nbsp;Subtext for header</small>&nbsp;<span class="badge"><?php echo $total_crops; ?> </span>
 <div class="btn-group pull-right">
 	<!-- <button class="btn btn-link" type="submit"><i class="icon-cog"></i></button> -->
 	<button class="btn btn-mini btn-link dropdown-toggle " data-toggle="dropdown">
@@ -45,9 +45,9 @@
 <?php endif; ?>
 
 <br>
-<!-- View User's Offers -->
+<!-- View User's crop Offers -->
 <div class="page-header">
-<h4>Οι προσφορές μου <small>Subtext for header</small>
+<h4>Οι προσφορές μου <small>&nbsp;Subtext for header </small>&nbsp;<span class="badge"><?php echo $total_croffers; ?> </span>
 <div class="btn-group pull-right">
 	<!-- <button class="btn btn-link" type="submit"><i class="icon-cog"></i></button> -->
 	<button class="btn btn-mini btn-link dropdown-toggle " data-toggle="dropdown">
@@ -59,23 +59,35 @@
 </div>
 </h4>
 </div>
-<?php //print_r($user_croffers); ?>
- <!-- View User's crops -->
-<div>
-	<ol>
-	<?php if (isset($user_croffers) && is_array($user_croffers) && count($user_croffers)) : ?>
-		<?php foreach ($user_croffers as $croffer) : ?>
-			<li>
-				<a href="<?php echo $croffer->crops_gr; ?>"><?php echo $croffer->crops_gr; ?></a>
-				<?php echo ', ' .$croffer->crop_variety_gr; ?>
-				<?php echo ', ' .$croffer->quantity . ' Τόνοι'; ?>
-				<?php echo ', ' .$croffer->price . ' &#8364; / ανά τόνο <br>' ; ?>
-			</li>
-
-		<?php endforeach; ?>
-	<?php endif; ?>
-	</ol>
-</div>
+<?php if (isset($user_croffers) && is_array($user_croffers) && count($user_croffers)) : ?>
+<table class='table table-condensed table-hover table-bordered'>
+<!-- <caption></caption> -->
+	<thead>
+		
+			<tr>
+				<th>Καλλιέργεια</th>
+				<th>Ποικιλία</th>
+				<th>Ποσότητα</th>
+				<th>Τιμή</th>
+				<!-- <th>Λεπτομέριες</th> -->
+			</tr>
+		
+	</thead>
+	<tbody>
+		<?php if (isset($user_croffers) && is_array($user_croffers) && count($user_croffers)) : ?>
+			<?php foreach ($user_croffers as $croffers) : ?>
+				<tr class="center">
+					<td><a href="<?php echo $croffers->crops_gr; ?>"><b><?php echo $croffers->crops_gr; ?></b></a></td>
+					<td class='muted'><?php echo $croffers->crop_variety_gr; ?></td>
+					<td class='muted'><b><?php echo $croffers->quantity . ' Τόνοι'; ?></b></td>
+					<td class='muted'><b><?php echo $croffers->price  . ' &#8364;</b> / ανά τόνο '; ?></td>
+					<!-- <td><?php //echo $crops->comment; ?></td> -->
+				</tr>
+			<?php endforeach; ?>
+		<?php endif; ?>
+	</tbody>
+</table>
+<?php endif; ?>
 
 <br>
 <!-- View User's Demands -->
@@ -96,7 +108,7 @@
 <br>
 <!-- View User's Questions -->
 <div class="page-header">
-<h4>Οι ερωτήσεις μου <small>Subtext for header</small>
+<h4>Οι ερωτήσεις μου <small>Subtext for header</small>&nbsp;<span class="badge"><?php echo $total_questions; ?></span>
 <div class="btn-group pull-right">
 	<!-- <button class="btn btn-link" type="submit"><i class="icon-cog"></i></button> -->
 	<button class="btn btn-mini btn-link dropdown-toggle " data-toggle="dropdown">
@@ -125,49 +137,46 @@
 </div>
 
 <br>
-<!-- View User's Questions -->
-<div class="page-header">
+<!-- View User's Anounce's -->
+<!-- <div class="page-header">
 <h4>Οι αγγελίες μου <small>Subtext for header</small>
 <div class="btn-group pull-right">
-	<!-- <button class="btn btn-link" type="submit"><i class="icon-cog"></i></button> -->
 	<button class="btn btn-mini btn-link dropdown-toggle " data-toggle="dropdown">
 		<span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu ">
-		<li><a href="<?php echo site_url('questions/questions/write_question') ?>">Νέα Αγγελία</a></li>
+		<li><a href="<?php //echo site_url('questions/questions/write_question') ?>">Νέα Αγγελία</a></li>
 	</ul>
 </div>
 </h4>
-</div>
+</div> -->
 
-<br>
+<!-- <br> -->
 <!-- View User's Groups -->
-<div class="page-header">
+<!-- <div class="page-header">
 <h4>Οι ομάδες μου <small>Subtext for header</small>
 <div class="btn-group pull-right">
-	<!-- <button class="btn btn-link" type="submit"><i class="icon-cog"></i></button> -->
 	<button class="btn btn-mini btn-link dropdown-toggle " data-toggle="dropdown">
 		<span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu ">
-		<li><a href="<?php echo site_url('questions/questions/write_question') ?>">Νέα Ομάδα</a></li>
+		<li><a href="<?php //echo site_url('questions/questions/write_question') ?>">Νέα Ομάδα</a></li>
 	</ul>
 </div>
 </h4>
-</div>
+</div> -->
 
-<br>
+<!-- <br> -->
 <!-- View User's Event -->
-<div class="page-header">
+<!-- <div class="page-header">
 <h4>Οι εκδηλώσεις μου <small>Subtext for header</small>
 <div class="btn-group pull-right">
-	<!-- <button class="btn btn-link" type="submit"><i class="icon-cog"></i></button> -->
 	<button class="btn btn-mini btn-link dropdown-toggle " data-toggle="dropdown">
 		<span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu ">
-		<li><a href="<?php echo site_url('questions/questions/write_question') ?>">Νέα Εκδήλωση</a></li>
+		<li><a href="<?php //echo site_url('questions/questions/write_question') ?>">Νέα Εκδήλωση</a></li>
 	</ul>
 </div>
 </h4>
-</div>
+</div> -->

@@ -202,7 +202,7 @@ label.required{font-weight: bold}
    HEADER
    ========================================================================== */
 .navbar-inner {
-  min-height: 40px;
+  /*min-height: 40px;*/
 }
 .navbar {
   font-size: 12px;
@@ -213,7 +213,7 @@ label.required{font-weight: bold}
 .navbar .container {
   padding: 0px 0px 0px 0px;
   margin-bottom: -50px;
-  min-height: 40px;
+  /*min-height: 40px;*/
 }
 .navbar .brand {
   font-size: 21px; 
@@ -506,8 +506,9 @@ footer .page-header {
 .left-bar-widget-contact i {
   opacity: 0.3;
 }
-.left-bar-widget .header {
-
+.side-left hr  {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .left-bar-widget .header h4{
   font-size: 13px;
@@ -607,6 +608,18 @@ footer {
 /*----------------------------------------------------------------------
   MISC
 -----------------------------------------------------------------------*/
+.glyphs {
+  margin-top:  -3px; 
+  width: 17px;
+  height: 17px;
+  padding-right: 6px;
+}
+.left-bar-widget .no-border {
+  margin-top:  -2px; 
+  padding: 0px;
+  border : 0px;
+  border-radius: 0px;
+}
 ul.checks{
 padding:0;
 margin:0px 0 20px 0;
@@ -618,10 +631,7 @@ margin:0px 0 20px 0;
   background:url(../../../assets/images/icon-arrow-right.png) no-repeat 5px 0.5em;
   padding-left:30px;
   }
-.btn {
-  font-weight: bold;
-}
-input[type="text"] {
+*/input[type="text"] {
   color:#999999;
 }
 .help-inline {

@@ -34,7 +34,7 @@ class Croffer_model extends BF_Model {
 		$this->db->join('crop_crops', 'crop_crops.crop_crops_id = crop_offer.crop_id', 'left');
 		$this->db->join('crop_variety', 'crop_variety.crop_variety_id = crop_offer.variety_id', 'left'); 
 
-		return parent::find_all_by();
+		return parent::find_all();
 	}
 
 

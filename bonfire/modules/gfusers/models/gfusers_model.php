@@ -53,7 +53,7 @@ class Gfusers_model extends BF_Model {
 			'allowed_types' => 'jpg|jpeg|gif|png',
 			'upload_path' => $this->gallery_path,
 			'file_name' => now() . '-' . $user_id,
-			'max_size' => '500'
+			'max_size' => '1000'
 			
 		);
 		

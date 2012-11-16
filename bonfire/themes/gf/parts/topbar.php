@@ -10,7 +10,7 @@
 			</a>
 
 			<?php //echo anchor( '/', $this->settings_lib->item('site.title'), 'class="brand"' ); ?>
-			<a href="<?php echo base_url(); ?>" class="brand" title="GoFarmer"><img src="<?php echo base_url('assets/images/tractor-x03.png'); ?>"  width='30' height='30' class="">&nbsp;Go<span>Farmer</span></a>
+			<a href="<?php echo base_url(); ?>" class="brand" title="GoFarmer - Social Farming"><b>[<img src="<?php echo base_url('assets/images/tractor-x03.png'); ?>"  width='30' height='30' class="">]</b>&nbsp;Go<span>Farmer</span></a>
 			<?php //echo anchor( '/', 'Go<span>Farmer</span>', 'class="brand"', 'title="GoFarmer"' ); ?>
 
 			<!-- Everything you want hidden at 940px or less, place within here -->

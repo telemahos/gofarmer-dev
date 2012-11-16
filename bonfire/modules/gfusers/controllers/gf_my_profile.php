@@ -84,6 +84,9 @@ class gf_my_profile extends Authenticated_Controller {
 		$data = array('user_id' => $this->current_user->id,'question_id' => 0); 
 		$user_questions = $this->questions_model->find_all_by($data);
 		Template::set('user_questions', $user_questions);
+		$count_user_questions = array('user_id' => $this->current_user->id,'question_id' => 0 , 'questions.deleted' => 0); 
+		$total_questions =  $this->questions_model->count_by($count_user_questions);
+		Template::set('total_questions', $total_questions);
 
 		Template::set_view('gfusers/gfusers/view_my_profile');
 		Template::render('three_col');
@@ -121,10 +124,18 @@ class gf_my_profile extends Authenticated_Controller {
 	 */
 	public function followers()
 	{ 
+		// Load index() for the left Bar data.
+		$this->index();
+
+		// Check to see if some of them you are following to.
 		$following_data  = array('user_id' => $this->current_user->id, 'deleted' => 0 );
 		$following = $this->followers_model->find_all_by($following_data);
 		Template::set('following', $following);
-		Template::set_view('gfusers/gfusers/view_following');
+		// print_r($following);
+
+		$followers = $this->followers_model->get_followers($this->current_user->id);
+		Template::set('followers', $followers);
+		Template::set_view('gfusers/gfusers/view_followers');
 		Template::render('three_col');
 	}
 

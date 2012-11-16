@@ -1,5 +1,5 @@
 <div class='sidebar'>
-	<a href="<?php echo site_url("questions/questions/write_question"); ?>" class="btn btn-large btn-block ">Νέα Ερώτηση</a>
+	<a href="<?php echo site_url("questions/questions/write_question"); ?>" class="btn btn-large btn-block "><img class="glyphs"  src="<?php echo Template::theme_url('images/glyphs/png/glyphicons_194_circle_question_mark.png') ?>" >Νέα Ερώτηση</a> 
 	<br>
 
     <div class='side_widget'>

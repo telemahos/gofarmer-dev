@@ -1,7 +1,7 @@
 <div class='side-left'>
 
 	<div class=' left-bar-widget'>
-		<a class="btn btn-large btn-block" href="<?php echo site_url('messages/messages/write_mail') ?>"><i class="icon-edit"></i> Σύνταξη Νέου Μηνύματος</a>
+		<a class="btn btn-large btn-block" href="<?php echo site_url('messages/messages/write_mail') ?>" title='Νέο Μήνυμα'><img class="no-border"  src="<?php echo Template::theme_url('images/glyphs/png/glyphicons_124_message_plus.png') ?>" >Νέο Μήνυμα</a>
 	</div>
 
 	<hr>

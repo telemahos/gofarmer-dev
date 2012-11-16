@@ -53,7 +53,6 @@
 				<?php echo '<abbr title="Κινητό"><i class="icon-signal"></i> </abbr>&nbsp;' . $gfusers->phone_1 .'<br>'; ?>
 				<?php endif ?>
 				<i class="icon-time"></i> &nbsp;<span class='left-side-soft'>Μέλος από </span><?php echo date('j M, Y', strtotime($user->created_on)); ?>
-
 			</address>
 		</div>
 	</div>
@@ -75,7 +74,7 @@
 							<a href="<?php echo site_url('gfusers/gf_my_profile/following'); ?>"><?php echo $total_following; ?></a>
 						</th>
 						<th class="span3">
-							<a href="#"><?php echo $total_followers; ?></a>
+							<a href="<?php echo site_url('gfusers/gf_my_profile/followers'); ?>"><?php echo $total_followers; ?></a>
 						</th >
 					</tr>
 				</thead>
