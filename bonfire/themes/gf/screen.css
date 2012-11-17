@@ -608,6 +608,22 @@ footer {
 /*----------------------------------------------------------------------
   MISC
 -----------------------------------------------------------------------*/
+.my-crop-offers ul {
+  list-style-type: none;
+}
+.my-crop-offers li {
+  float: left;
+}
+.my-crops .media  img {
+  opacity: 0.2;
+}
+.my-crops .media .media-body p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.my-crops .media-heading {
+  margin-bottom: 0px;
+}
 .glyphs {
   margin-top:  -3px; 
   width: 17px;

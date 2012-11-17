@@ -65,10 +65,10 @@
 				<thead>
 					<tr>
 						<th class="span3">
-							<a href="#"><?php echo $total_crops; ?></a>
+							<a href="<?php echo site_url('gfusers/gf_my_profile/my_crops'); ?>"><?php echo $total_crops; ?></a>
 						</th>
 						<th class="span3">
-							<a href="#"><?php echo $total_croffers; ?></a>
+							<a href="<?php echo site_url('gfusers/gf_my_profile/my_crop_offers'); ?>"><?php echo $total_croffers; ?></a>
 						</th >
 						<th class="span3">
 							<a href="<?php echo site_url('gfusers/gf_my_profile/following'); ?>"><?php echo $total_following; ?></a>

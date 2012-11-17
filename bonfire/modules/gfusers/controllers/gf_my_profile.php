@@ -139,4 +139,48 @@ class gf_my_profile extends Authenticated_Controller {
 		Template::render('three_col');
 	}
 
+	//--------------------------------------------------------------------
+
+	/**
+	 * Allows a user to view their own profile information.
+	 *
+	 * @access public
+	 *
+	 * @return void
+	 */
+	public function my_crops()
+	{ 
+		// Load index() for the left Bar data.
+		$this->index();
+
+		// get the current user crops
+		$records = $this->crop_model->get_user_crops($this->current_user->id);
+		Template::set('records', $records);
+
+		Template::set_view('gfusers/gfusers/view_my_crops');
+		Template::render('three_col');
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Allows a user to view their own profile information.
+	 *
+	 * @access public
+	 *
+	 * @return void
+	 */
+	public function my_crop_offers()
+	{ 
+		// Load index() for the left Bar data.
+		$this->index();
+
+		// get user's crop offers
+		$records = $this->croffer_model->get_user_croffers($this->current_user->id);
+		Template::set('records', $records);
+
+		Template::set_view('gfusers/gfusers/view_my_crop_offers');
+		Template::render('three_col');
+	}
+
 }
