@@ -608,11 +608,29 @@ footer {
 /*----------------------------------------------------------------------
   MISC
 -----------------------------------------------------------------------*/
-.my-crop-offers ul {
-  list-style-type: none;
+.offer-attributes .big-size {
+  font-size: 36px;
+  line-height: 33px;
+  font-weight: lighter;
+  padding-bottom : 0px;
 }
-.my-crop-offers li {
-  float: left;
+.offer-attributes  small {
+  font-size: 18px;
+  line-height: 0px;
+  font-weight: lighter;
+  padding: 0;
+  margin-top: -10px;  
+}
+.offer-attributes {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+.offer-attributes hr {
+  padding: 0;
+}
+.offer-attributes span {
+  font-size: 18px;
+  line-height: 0px;
 }
 .my-crops .media  img {
   opacity: 0.2;
