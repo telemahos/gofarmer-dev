@@ -11,13 +11,41 @@
 						    <!-- <<i></i>mg class="media-object" src="http://placehold.it/64x64"> -->
 						  </a>
 						  <div class="media-body">
-						    <h3 class="media-heading"><?php echo $record->crops_gr; ?>&nbsp;
+						    <h3 class="media-heading"><a href="<?php echo site_url('croffer/croffer/edit') . '/' . $record->id; ?>"><?php echo $record->crops_gr; ?></a>&nbsp;
 						    	<small>ποικιλία <b><?php echo $record->crop_variety_gr; ?></b></small>
 						    </h3>
-						    <span class=''><b>Συμβατική Καλλιέργεια <?php //echo $record->certification; ?></b></span>	
+						    <span class='certification'>
+						    	<?php if($record->certification == 0) : ?>
+									<?php echo '<span class="label"><b>Συμβατική Καλλιέργεια</b></span>'; ?>
+								<?php elseif ($record->certification == 1) : ?>
+									<?php echo '<span class="label label-info"><b>Ολοκληρωμένη Διαχείρηση</b></span>'; ?>
+								<?php else : ?>
+									<?php echo '<span class="label label-success"><b>Βιολογική Καλλιέργεια</b></span>'; ?>
+								<?php endif ?>
+						    </span>
 						    <p>
-						    	<span class="muted">
-						    		<em>συσκευασία <b><?php echo $record->packaging_id; ?></b>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;ποιότητα <b><?php echo $record->quantity_type_id; ?></b>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; διαθέση από <b><?php echo date('M, Y', strtotime($record->created_on)); ?></b>
+						    	<span class="text-info">
+						    		<em>συσκευασία 
+						    			<?php if($record->packaging_id == 1) : ?>
+						    				<b>Όχι</b>
+						    			<?php else : ?>
+						    				 <b>Ναί</b>
+						    			<?php endif ?>
+						    			&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;ποιότητα
+						    			<?php if($record->quality_id == 1) : ?> 
+						    				<b>Α</b>
+						    			<?php elseif ($record->quality_id == 2) : ?>
+						    				<b>Β</b>
+						    			<?php elseif ($record->quality_id == 3) : ?>
+						    				<b>Γ</b>
+						    			<?php elseif ($record->quality_id == 4) : ?>
+						    				<b>Δ</b>
+						    			<?php elseif ($record->quality_id == 5) : ?>
+						    				<b>Ε</b>
+						    			<?php elseif ($record->quality_id == 6) : ?>
+						    				<b>ΣΤ</b>
+						    			<?php endif ?>
+						    			&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; διαθέση από <b><?php echo date('M, Y', strtotime($record->created_on)); ?></b>
 						    		</em>
 						    	</span>
 						    </p>

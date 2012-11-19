@@ -1,7 +1,7 @@
 <div class="page-header">
 <!-- View User's crops -->
 <!-- ################################################################## -->
-<h4>Οι καλλιέργειές μου <small>&nbsp;Subtext for header</small>&nbsp;<?php if($total_crops > 0): ?><span class="badge"><?php echo $total_crops; ?> </span><?php endif; ?>
+<h4>Καλλιέργειές μου <small>&nbsp;<a href="<?php echo site_url('gfusers/gf_my_profile/my_crops'); ?>">εμφάνιση όλων</a></small>&nbsp;<?php if($total_crops > 0): ?><span class="badge"><?php echo $total_crops; ?> </span><?php endif; ?>
 <div class="btn-group pull-right">
 	<!-- <button class="btn btn-link" type="submit"><i class="icon-cog"></i></button> -->
 	<button class="btn btn-mini btn-link dropdown-toggle " data-toggle="dropdown">
@@ -61,7 +61,7 @@
 <!-- ################################################################## -->
 <!-- View User's crop Offers -->
 <div class="page-header">
-<h4>Οι προσφορές μου <small>&nbsp;Subtext for header </small>&nbsp;<?php if($total_croffers > 0): ?><span class="badge"><?php echo $total_croffers; ?> </span><?php endif; ?>
+<h4>Προσφορές μου <small>&nbsp;<a href="<?php echo site_url('gfusers/gf_my_profile/my_crop_offers'); ?>">εμφάνιση όλων </a></small>&nbsp;<?php if($total_croffers > 0): ?><span class="badge"><?php echo $total_croffers; ?> </span><?php endif; ?>
 <div class="btn-group pull-right">
 	<!-- <button class="btn btn-link" type="submit"><i class="icon-cog"></i></button> -->
 	<button class="btn btn-mini btn-link dropdown-toggle " data-toggle="dropdown">
@@ -124,7 +124,7 @@
 <!-- ################################################################## -->
 <!-- View User's Questions -->
 <div class="page-header">
-<h4>Οι ερωτήσεις μου <small>Subtext for header</small>&nbsp;<?php if($total_questions > 0): ?><span class="badge"><?php echo $total_questions; ?></span><?php endif; ?>
+<h4>Ερωτήσεις μου <small>σύνολο </small>&nbsp;<?php if($total_questions > 0): ?><span class="badge"><?php echo $total_questions; ?></span><?php endif; ?>
 <div class="btn-group pull-right">
 	<!-- <button class="btn btn-link" type="submit"><i class="icon-cog"></i></button> -->
 	<button class="btn btn-mini btn-link dropdown-toggle " data-toggle="dropdown">

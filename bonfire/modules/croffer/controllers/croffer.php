@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class croffer extends Front_Controller {
+class croffer extends Authenticated_Controller {
 
 	//--------------------------------------------------------------------
 
@@ -108,6 +108,69 @@ class croffer extends Front_Controller {
 	}
 
 	//--------------------------------------------------------------------
+
+
+
+	/*
+		Method: edit()
+
+		Allows editing of croffer data.
+	*/
+	public function edit()
+	{
+		$id = $this->uri->segment(4);
+
+		if (empty($id))
+		{
+			Template::set_message(lang('croffer_invalid_id'), 'error');
+			redirect(SITE_AREA .'/content/croffer');
+		}
+
+		if (isset($_POST['save']))
+		{
+			$this->auth->restrict('Croffer.Content.Edit');
+
+			if ($this->save_croffer('update', $id))
+			{
+				// Log the activity
+				$this->activity_model->log_activity($this->current_user->id, lang('croffer_act_edit_record').': ' . $id . ' : ' . $this->input->ip_address(), 'croffer');
+
+				Template::set_message(lang('croffer_edit_success'), 'success');
+			}
+			else
+			{
+				Template::set_message(lang('croffer_edit_failure') . $this->croffer_model->error, 'error');
+			}
+		}
+		else if (isset($_POST['delete']))
+		{
+			$this->auth->restrict('Croffer.Content.Delete');
+
+			if ($this->croffer_model->delete($id))
+			{
+				// Log the activity
+				$this->activity_model->log_activity($this->current_user->id, lang('croffer_act_delete_record').': ' . $id . ' : ' . $this->input->ip_address(), 'croffer');
+
+				Template::set_message(lang('croffer_delete_success'), 'success');
+
+				redirect(SITE_AREA .'/content/croffer');
+			} else
+			{
+				Template::set_message(lang('croffer_delete_failure') . $this->croffer_model->error, 'error');
+			}
+		}
+		Template::set('croffer', $this->croffer_model->find($id));
+		Assets::add_module_js('croffer', 'croffer.js');
+
+		Template::set_block('sidebar_right', 'croffer/croffer/sidebar_right');
+		Template::set('toolbar_title', lang('croffer_edit') . ' croffer'); 
+		Template::set('site_description', lang('croffer_edit') . ' description');
+		Template::set_view('croffer/croffer/view_edit_croffer');
+		Template::render('two_right');
+	}
+
+	//--------------------------------------------------------------------
+
 
 
 	//--------------------------------------------------------------------

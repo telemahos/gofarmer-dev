@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><?php echo $this->settings_lib->item('site.title'); ?></title>
+    <title><?php echo $this->settings_lib->item('site.title'); ?> <?php if(isset($toolbar_title)) echo '&nbsp;&nbsp;|&nbsp;&nbsp;' . $toolbar_title; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="<?php if(isset($site_description))  echo $site_description; ?>">
+    <meta name="author" content="<?php echo $this->settings_lib->item('site.system_email'); ?>"> 
 
 				<script src="<?php echo Template::theme_url('js/modernizr-2.5.3.js') ?>"></script>
 

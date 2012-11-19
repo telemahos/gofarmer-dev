@@ -608,14 +608,24 @@ footer {
 /*----------------------------------------------------------------------
   MISC
 -----------------------------------------------------------------------*/
+.my-crop-offers .media .media-body p {
+/*  margin-top:    0px;
+  margin-bottom: -5px;*/
+
+}
+.my-crop-offers .media .media-body span .certification {
+  margin-top: 0px;
+  margin-bottom:  25px;
+}
 .offer-attributes .big-size {
+  font-family:  "Century Gothic", georgia, Sans-serif, arial ;
   font-size: 36px;
   line-height: 33px;
   font-weight: lighter;
   padding-bottom : 0px;
 }
 .offer-attributes  small {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 0px;
   font-weight: lighter;
   padding: 0;
@@ -629,7 +639,7 @@ footer {
   padding: 0;
 }
 .offer-attributes span {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 0px;
 }
 .my-crops .media  img {
