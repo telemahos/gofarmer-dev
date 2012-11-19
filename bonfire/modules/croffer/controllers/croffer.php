@@ -27,7 +27,7 @@ class croffer extends Authenticated_Controller {
 			$mylang = $this->current_user->language;
 			Template::set('mylang', $mylang);
 			if($this->current_user->language == "greek") {
-				Assets::add_js('jquery.ui.datepicker-el.js');
+				// Assets::add_js('jquery.ui.datepicker-el.js');
 			} 
 		}
 	
@@ -126,7 +126,7 @@ class croffer extends Authenticated_Controller {
 			redirect(SITE_AREA .'/content/croffer');
 		}
 
-		if (isset($_POST['save']))
+		if (isset($_POST['save2']))
 		{
 			$this->auth->restrict('Croffer.Content.Edit');
 
@@ -159,6 +159,10 @@ class croffer extends Authenticated_Controller {
 				Template::set_message(lang('croffer_delete_failure') . $this->croffer_model->error, 'error');
 			}
 		}
+		// Loading data from crop module
+		$user_crops_data = $this->crop->show_users_crop_list_raw($this->current_user->id);
+		Template::set('user_crops_data', $user_crops_data);
+
 		Template::set('croffer', $this->croffer_model->find($id));
 		Assets::add_module_js('croffer', 'croffer.js');
 
@@ -234,7 +238,9 @@ class croffer extends Authenticated_Controller {
 		$data['quality_id']        = $this->input->post('croffer_quality_id');
 		$data['price']        = $this->input->post('croffer_price');
 		$data['price_per']        = $this->input->post('croffer_price_per');
-		$data['release_date']        = $this->input->post('croffer_release_date') ? $this->input->post('croffer_release_date') : '0000-00-00 00:00:00';
+		// $data['release_date']        = $this->input->post('croffer_release_date') ? $this->input->post('croffer_release_date') : '0000-00-00 00:00:00';
+		// $data['release_date']        = date('j M, Y', strtotime($this->input->post('croffer_release_date')));
+		$data['release_date']        = date('Y-m-d', strtotime($this->input->post('croffer_release_date')));
 		$data['comment']        = $this->input->post('croffer_comment');
 		// $data['image']        = $this->input->post('croffer_image');
 		$data['image']        = 0;

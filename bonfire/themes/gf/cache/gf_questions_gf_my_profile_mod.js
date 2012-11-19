@@ -90,7 +90,8 @@ $('#subjectRemainingCharacters').html(subjectCharacterLimit);
 			}
 		});
 	});
-$('#croffer_release_date').datepicker({ dateFormat: 'dd M, yy'});
+$('#croffer_release_date').datepicker({ dateFormat: 'd M, yy'});
+// $('#croffer_release_date').datepicker({ dateFormat: 'dd-mm-yy'});
 
 //Disable the image input
 $("#croffer_image").addClass("disabled").attr('disabled','disabled');
