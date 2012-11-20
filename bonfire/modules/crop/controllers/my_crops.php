@@ -64,9 +64,9 @@ class my_crops extends Front_Controller {
 		}
 
 		// get the current user crops
-		//$crop = $this->crop_model->find_all_by("user_id",$this->current_user->id);
+		$crop = $this->crop_model->find_all_by("user_id",$this->current_user->id);
 
-		//Template::set('crop', $crop);
+		Template::set('crop', $crop);
 
 		Template::set_view('crop/crop/view_edit_my_crop');
 		Template::render();

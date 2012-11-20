@@ -38,19 +38,19 @@ $id = isset($croffer['id']) ? $croffer['id'] : '';
                         <!-- Check for selected option -->
                         <?php if($record->crop == $croffer['crop_id'] && $record->variety == $croffer['variety_id'] ) : ?> 
                             <?php if($mylang == "greek"): ?>
-                                <option value="<?php echo $record->crop?>" selected><?php echo  "(" . $record->crop . ") " .$record->crops_gr . " - " . $record->crop_variety_gr . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
+                                <option value="<?php echo $record->crop_id?>" selected><?php echo  "(" . $record->crop_id . ") " .$record->crops_gr . " - " . $record->crop_variety_gr . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
                                 </option>
                             <?php else : ?> 
-                                <option value="<?php echo $record->crop?>" selected><?php echo  "(" . $record->crop . ") " .$record->crops_en . " - " . $record->crop_variety_en . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
+                                <option value="<?php echo $record->crop_id?>" selected><?php echo  "(" . $record->crop_id . ") " .$record->crops_en . " - " . $record->crop_variety_en . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
                                 </option>
                             <?php endif; ?> 
                         <!-- No Selected option -->
                         <?php else : ?>
                             <?php if($mylang == "greek"): ?>
-                                <option value="<?php echo $record->crop?>"><?php echo  "(" . $record->crop . ") " .$record->crops_gr . " - " . $record->crop_variety_gr . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
+                                <option value="<?php echo $record->crop_id?>"><?php echo  "(" . $record->crop_id . ") " .$record->crops_gr . " - " . $record->crop_variety_gr . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
                                 </option>
                             <?php else : ?> 
-                                <option value="<?php echo $record->crop?>"><?php echo  "(" . $record->crop . ") " .$record->crops_en . " - " . $record->crop_variety_en . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
+                                <option value="<?php echo $record->crop_id?>"><?php echo  "(" . $record->crop_id . ") " .$record->crops_en . " - " . $record->crop_variety_en . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
                                 </option>
                             <?php endif; ?> 
                         <!-- EOF Check for selected option --> 

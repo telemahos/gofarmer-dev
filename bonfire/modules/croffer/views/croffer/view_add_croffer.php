@@ -35,12 +35,12 @@ $id = isset($croffer['id']) ? $croffer['id'] : '';
             <div class='controls'>
                 <select class='' name="croffer_crop_id" id='croffer_crop_id'>
                     <option value="0"><?php echo lang('crop_add_crop_select'); ?></option>
-                    <?php foreach ($user_crops_data as $record) : ?>
+                    <?php foreach ($user_crops_data as $record) : ?><?php echo $record->crop; ?>
                         <?php if($mylang == "greek"): ?>
-                            <option value="<?php echo $record->crop?>"><?php echo  "(" . $record->crop . ") " .$record->crops_gr . " - " . $record->crop_variety_gr . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
+                            <option value="<?php echo $record->crop_id?>"><?php echo  "(" . $record->crop_id . ") " .$record->crops_gr . " - " . $record->crop_variety_gr . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
                             </option>
                         <?php else : ?> 
-                            <option value="<?php echo $record->crop?>"><?php echo  "(" . $record->crop . ") " .$record->crops_en . " - " . $record->crop_variety_en . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
+                            <option value="<?php echo $record->crop_id?>"><?php echo  "(" . $record->crop_id . ") " .$record->crops_en . " - " . $record->crop_variety_en . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
                             </option>
                         <?php endif; ?>     
                             <!-- End of selected control point --> 
@@ -109,34 +109,29 @@ $id = isset($croffer['id']) ? $croffer['id'] : '';
             </div>
         </div>
 
-
-
         <div class="control-group <?php echo form_error('croffer_release_date') ? 'error' : ''; ?>">
             <?php echo form_label(lang('croffer_release'), 'croffer_release_date', array('class' => "control-label") ); ?>
             <div class='controls'>
-        <input id="croffer_release_date" type="text" name="croffer_release_date" maxlength="30" value="<?php echo set_value('croffer_release_date', isset($croffer['croffer_release_date']) ? $croffer['croffer_release_date'] : ''); ?>"  />
-        <span class="help-inline"><?php echo lang('croffer_release_help') ?></span>
+            <input id="croffer_release_date" type="text" name="croffer_release_date" maxlength="30" value="<?php echo set_value('croffer_release_date', isset($croffer['croffer_release_date']) ? $croffer['croffer_release_date'] : ''); ?>"  />
+            <span class="help-inline"><?php echo lang('croffer_release_help') ?></span>
+            </div>
         </div>
 
-
-        </div>
         <div class="control-group <?php echo form_error('croffer_comment') ? 'error' : ''; ?>">
             <?php echo form_label(lang('croffer_comment'), 'croffer_comment', array('class' => "control-label") ); ?>
             <div class='controls'>
-            <?php echo form_textarea( array( 'name' => 'croffer_comment', 'id' => 'croffer_comment', 'rows' => '5', 'cols' => '80', 'value' => set_value('croffer_comment', isset($croffer['croffer_comment']) ? $croffer['croffer_comment'] : '') ) )?>
-            <span class="help-inline"><?php echo lang('croffer_comment_help') ?></span>
+                <?php echo form_textarea( array( 'name' => 'croffer_comment', 'id' => 'croffer_comment', 'rows' => '5', 'cols' => '80', 'value' => set_value('croffer_comment', isset($croffer['croffer_comment']) ? $croffer['croffer_comment'] : '') ) )?>
+                <span class="help-inline"><?php echo lang('croffer_comment_help') ?></span>
+            </div>
         </div>
 
-        </div>
-        <div class="control-group <?php echo form_error('croffer_image') ? 'error' : ''; ?>">
+        <!-- <div class="control-group <?php echo form_error('croffer_image') ? 'error' : ''; ?>">
             <?php echo form_label(lang('croffer_image'), 'croffer_image', array('class' => "control-label") ); ?>
             <div class='controls'>
-        <input id="croffer_image" type="text" name="croffer_image" maxlength="250" value="<?php echo set_value('croffer_image', isset($croffer['croffer_image']) ? $croffer['croffer_image'] : ''); ?>"  />
-        <span class="help-inline"><?php echo form_error('croffer_image'); ?></span>
-        </div>
-
-
-        </div>
+            <input id="croffer_image" type="text" name="croffer_image" maxlength="250" value="<?php echo set_value('croffer_image', isset($croffer['croffer_image']) ? $croffer['croffer_image'] : ''); ?>"  />
+            <span class="help-inline"><?php echo form_error('croffer_image'); ?></span>
+            </div>
+        </div> -->
 
 
 

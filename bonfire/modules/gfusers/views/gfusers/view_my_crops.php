@@ -4,11 +4,11 @@
 		<?php if (isset($records) && is_array($records) && count($records)) : ?>
 			<?php foreach ($records as $record) : ?>
 				<div class="media">
-			      <a class="pull-left" href="#">
+			      <a class="pull-left" href="<?php echo site_url('crop/crop/edit') . '/' . $record->crop_id; ?>">
 			        <img class="media-object" src="<?php echo base_url('assets/images/weat-64.png'); ?>" width='64' height='64'>
-			      </a>
+			      </a> 
 			      <div class="media-body">
-			        <h4 class="media-heading"><a href="#"><?php echo $record->crops_gr?></a><small><span class='pull-right'><em>στρέμματα&nbsp;&nbsp;&nbsp;<b><?php echo $record->hectar?></b> στρ.</em></span></small></h4>
+			        <h4 class="media-heading"><a href="<?php echo site_url('crop/crop/edit') . '/' . $record->crop_id; ?>"><?php echo $record->crops_gr?></a><small><span class='pull-right'><em>στρέμματα&nbsp;&nbsp;&nbsp;<b><?php echo $record->hectar?></b> στρ.</em></span></small></h4>
 			        <p><em>ποικιλία <b><?php echo $record->crop_variety_gr?></b></em>&nbsp;&nbsp;&nbsp;
 		        		<?php if($record->certification == 0) : ?>
 							<?php echo '<span class="muted">|&nbsp;&nbsp;&nbsp; Συμβατική Καλλιέργεια</span>'; ?>

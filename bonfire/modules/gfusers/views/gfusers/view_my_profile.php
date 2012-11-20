@@ -102,7 +102,7 @@
 	</tbody>
 </table>
 	<?php if($total_crops > 5) : ?>
-		<div class='pull-right'><a href="#">εμφάνιση όλων</a></div>
+		<div class='pull-right'><a href="<?php echo site_url('gfusers/gf_my_profile/my_crop_offers'); ?>">εμφάνιση όλων</a></div>
 	<?php endif; ?>
 <?php endif; ?>
 <br>

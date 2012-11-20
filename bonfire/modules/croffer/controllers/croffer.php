@@ -99,7 +99,7 @@ class croffer extends Authenticated_Controller {
 
 		// Loading data from crop module
 		$user_crops_data = $this->crop->show_users_crop_list_raw($this->current_user->id);
-		
+		// print_r($user_crops_data);
 		Template::set('user_crops_data', $user_crops_data);
 
 		Template::set('toolbar_title', lang('croffer_create') . ' croffer');
@@ -225,13 +225,16 @@ class croffer extends Authenticated_Controller {
 		$data = array(); 
 		// $data['user_id']        = $this->input->post('croffer_user_id');
 		$data['user_id']        = $this->current_user->id; 
-		$data['crop_id']        = $this->input->post('croffer_crop_id');
+		// $data['crop_id']        = $this->input->post('croffer_crop_id'); from_user_crop
+		$data['from_user_crop']        = $this->input->post('croffer_crop_id');
 		/*GET THE VARIETY ID FROM THE DB*/
-		$the_variety_id = $this->crop_model->find_by('crop',$this->input->post('croffer_crop_id'));
+		$the_variety_id = $this->crop_model->find_by('crop_id',$this->input->post('croffer_crop_id'));
 		// $the_variety_id = $this->crop_model->find_by('id',$this->input->post('the_crop_id'));
 		$variety_id = $the_variety_id->variety;
-		
+		$crop_id = $the_variety_id->crop;
+
 		$data['variety_id']        =  $variety_id;
+		$data['crop_id']        = $crop_id;
 		$data['quantity']        = $this->input->post('croffer_quantity');
 		$data['quantity_type_id']        = $this->input->post('croffer_quantity_type_id');
 		$data['packaging_id']        = $this->input->post('croffer_packaging_id');

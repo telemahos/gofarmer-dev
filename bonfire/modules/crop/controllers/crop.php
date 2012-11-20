@@ -192,6 +192,50 @@ class crop extends Front_Controller {
 	}
 
 	//--------------------------------------------------------------------
+
+
+
+	/*
+		Method: edit()
+
+		Allows editing of crop data.
+	*/
+	public function edit()
+	{
+		// $this->auth->restrict('Crop.Content.Edit');
+
+		$id = $this->uri->segment(4);
+
+		if (empty($id))
+		{
+			Template::set_message(lang('crop_invalid_id'), 'error');
+			redirect(SITE_AREA .'/content/crop');
+		}
+
+		if ($this->input->post('submit'))
+		{
+			if ($this->save_crop('update', $id))
+			{
+				// Log the activity
+				$this->activity_model->log_activity($this->current_user->id, lang('crop_act_edit_record').': ' . $id . ' : ' . $this->input->ip_address(), 'crop');
+
+				Template::set_message(lang('crop_edit_success'), 'success');
+			}
+			else
+			{
+				Template::set_message(lang('crop_edit_failure') . $this->crop_model->error, 'error');
+			}
+		}
+
+		Template::set('crop', $this->crop_model->find_by('crop_id', $id));
+		Assets::add_module_js('crop', 'crop.js');
+
+		Template::set('toolbar_title', lang('crop_edit') . ' crop');
+		Template::set_view('crop/crop/view_edit_my_crop');
+		Template::render();
+	}
+
+	//--------------------------------------------------------------------
 	// !PRIVATE METHODS
 	//--------------------------------------------------------------------
 
