@@ -15,7 +15,6 @@
 </h4>
 </div>
 
-
 <?php if (isset($user_crops) && is_array($user_crops) && count($user_crops)) : ?>
 <table class='table table-condensed table-hover table-bordered'>
 <!-- <caption></caption> -->
@@ -26,7 +25,7 @@
 				<th>Ποικιλία</th>
 				<th>Στρέμματα</th>
 				<th>Είδος Καλλιέργειας</th>
-				<!-- <th>Λεπτομέριες</th> -->
+				<th>&nbsp;</th>
 			</tr>
 		
 	</thead>
@@ -34,7 +33,7 @@
 		<?php if (isset($user_crops) && is_array($user_crops) && count($user_crops)) : ?>
 			<?php foreach ($user_crops as $crops) : ?>
 				<tr class="center">
-					<td><a href="<?php echo $crops->crops_gr; ?>"><b><?php echo $crops->crops_gr; ?></b></a></td>
+					<td><a href="<?php echo site_url('crop/crop/edit') . '/' . $crops->crop_id; ?>"><b><?php echo $crops->crops_gr; ?></b></a></td>
 					<td class='muted'><em><?php echo $crops->crop_variety_gr; ?></em></td>
 					<td class='muted'><b><?php echo $crops->hectar . '</b> στρ'; ?></td>
 					<td class='muted'>
@@ -46,8 +45,35 @@
 							<?php echo '<span class="text-success">Βιολογική Καλλιέργεια</span>'; ?>
 						<?php endif ?>
 					</td>
-					<!-- <td><?php //echo $crops->comment; ?></td> -->
+					<td>
+						<a href="<?php echo site_url('crop/crop/edit') . '/' . $crops->crop_id; ?>" class='btn btn-mini pull-left' title='Επεξεργασία'><i class="icon-edit"></i></a>
+						<a href="#modal_del_crop<?php echo $crops->crop_id; ?>" data-toggle="modal" class='btn btn-danger btn-mini pull-right' title='Διαγραφή'><i class="icon-trash icon-white"></i></a>
+					</td>
 				</tr>
+
+				<!-- Modal modal_del_crop -->
+				<div id="modal_del_crop<?php echo $crops->crop_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3 id="myModalLabel">Διαγραφή καλλιέργειας</h3>
+					</div>
+					<div class="modal-body">
+						<p>
+							Θέλετε να διαγράψετε την καλλιέργεια; 
+							<span class='well well-small'>
+							<b><?php echo $crops->crops_gr; ?></b>
+							<em><?php echo $crops->crop_variety_gr; ?></em>
+							<b><?php echo $crops->hectar . '</b> στρ'; ?>
+							</span>
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn" data-dismiss="modal" aria-hidden="true">Άκυρο</button>
+						<a href="<?php echo site_url('crop/crop/delete_crop'); ?>/<?php echo $crops->crop_id ?>" class="btn btn-danger"><i class='icon-trash icon-white'></i> Διαγραφή</a>
+					</div>
+				</div>
+				<!-- End of Modal -->
+
 			<?php endforeach; ?>
 		<?php endif; ?>
 	</tbody>

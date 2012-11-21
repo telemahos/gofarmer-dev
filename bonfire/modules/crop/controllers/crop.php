@@ -18,7 +18,7 @@ class crop extends Front_Controller {
 		
 		//Assets::add_js(Template::theme_url('js/editors/ckeditor/ckeditor.js'));
 		// just a javascript call for my js script
-		Assets::add_module_js('crop', 'crop.js');
+		
 
 		if ($this->auth->is_logged_in() === TRUE)
 		{
@@ -142,7 +142,7 @@ class crop extends Front_Controller {
 	{
 		if (isset($_POST['data']))
 		{
-			echo '<option value=0">Επιλέξτε ποικιλία...</option>';
+			echo '<option value=0" disabled="disabled">Επιλέξτε ποικιλία...</option>';
 			$crop_variety = $this->crop_model->get_crop_variety_list($_POST['data']);
 			foreach ($crop_variety as $key => $value) {
 				echo '<option value='. $value['crop_variety_id'] .'>' . $value['crop_variety_gr'] . '</option>';
@@ -182,6 +182,7 @@ class crop extends Front_Controller {
 				Template::set_message(lang('crop_create_failure') . $this->crop_model->error, 'error');
 			}
 		}
+		Assets::add_module_js('crop', 'crop.js');
 		$crop_crops = $this->crop_model->get_crop_list();
 
 		Template::set('crop_crops', $crop_crops);
@@ -226,9 +227,15 @@ class crop extends Front_Controller {
 				Template::set_message(lang('crop_edit_failure') . $this->crop_model->error, 'error');
 			}
 		}
-
-		Template::set('crop', $this->crop_model->find_by('crop_id', $id));
-		Assets::add_module_js('crop', 'crop.js');
+		$crop = $this->crop_model->find_by('crop_id', $id);
+		// All available crops
+		Template::set('crop_crops', $this->crop_model->get_crop_list());
+		// Get all available varieties from this crop
+		Template::set('crop_varieties', $this->crop_model->get_crop_variety_list($crop->crop));
+		// This current crop
+		Template::set('crop', $crop);
+		Assets::clear_cache();
+		Assets::add_module_js('crop', 'update_crop.js');
 
 		Template::set('toolbar_title', lang('crop_edit') . ' crop');
 		Template::set_view('crop/crop/view_edit_my_crop');
@@ -303,7 +310,10 @@ class crop extends Front_Controller {
 			}
 			else if ($type == 'update')
 			{
-				$return = $this->crop_model->update($id, $data);
+				$where_data = array('crop_id' => $id);
+				$return = $this->crop_model->update($where_data, $data);
+
+				// $return = $this->crop_model->update($id, $data);
 			}
 
 			return $return;
@@ -314,5 +324,39 @@ class crop extends Front_Controller {
 		}
 		
 	}
+
+	//--------------------------------------------------------------------
+
+	/*
+		Method: delete_mail()
+
+		Delete the chosen mail .
+	*/
+	public function delete_crop()
+	{
+		$data = array( 'crop_id' => $this->uri->segment(4));
+		if ($this->crop_model->delete_where($data))
+		{
+			// Log the activity
+			$this->activity_model->log_activity($this->current_user->id, lang('messages_act_delete_record').': ' . $this->uri->segment(4) . ' : ' . $this->input->ip_address(), 'messages');
+
+			Template::set_message(lang('messages_delete_success'), 'success');
+
+			redirect('/gfusers/gf_my_profile');
+		} else
+		{
+			Template::set_message(lang('crop_delete_failure') . $this->messages_model->error, 'error');
+		}
+		// $data = array( 'msg_id' => $this->uri->segment(4));
+		// // get the current user mails
+		// $this->messages_model->delete_where($data);
+		
+
+		// Template::set('records', $records);		
+		// Template::redirect('/messages/messages/mails');
+		// Template::render('three_col');
+	}
+
+	//--------------------------------------------------------------------
 
 }

@@ -1,5 +1,25 @@
 <div class="my-crop-offers">
-	<h3>Οι προσφορές μου<?php //echo lang('crop_view_my_crops_title') ?></h3><hr>
+	<ul class="nav nav-tabs">
+	    <li>
+	    	<a href="<?php echo site_url('gfusers/gf_my_profile/my_crops'); ?>">Καλλιέργειες</a>
+	    </li>
+	    <li class="active"><a href="#">Προσφορές</a></li>
+	    <li class="dropdown pull-right">
+				<a class="dropdown-toggle"
+				data-toggle="dropdown"
+				href="#">
+				Επιλογές
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="<?php echo site_url('crop/add_crop') ?>">Νέα Καλλιέργεια</a></li>
+					<li><a href="<?php echo site_url('croffer/create') ?>">Νέα Προσφορά</a></li>
+					<li><a href="<?php echo site_url('gfusers/gf_my_profile') ?>">Προφίλ</a></li>
+				</ul>
+			</li>
+    </ul>
+    <br>
+	<!-- <h3>Οι προσφορές μου<?php //echo lang('crop_view_my_crops_title') ?></h3><hr> -->
 
 	<?php echo form_open($this->uri->uri_string()); ?>	
 		<?php if (isset($records) && is_array($records) && count($records)) : ?>

@@ -111,8 +111,9 @@ class Crop_model extends BF_Model {
 	*/
 	public function get_user_crops($id = NULL)
 	{
-		$this->db->select('crop.crop_id, crop.user_id, crop.crop, crop.variety, crop.hectar, crop.certification, crop.comment, crop.deleted, crop.created_on, crop.modified_on, crop_crops.crop_crops_id, crop_crops.crops_gr,crop_crops.crops_en, crop_variety.crop_variety_id,  crop_variety.crop_variety_gr, crop_variety.crop_variety_en')->where('user_id',$id);
-		// $this->db->select('*')->where('user_id',$id);
+		$this->db->select('crop.crop_id, crop.user_id, crop.crop, crop.variety, crop.hectar, crop.certification, crop.comment, crop.deleted, crop.created_on, crop.modified_on, crop_crops.crop_crops_id, crop_crops.crops_gr,crop_crops.crops_en, crop_variety.crop_variety_id,  crop_variety.crop_variety_gr, crop_variety.crop_variety_en')
+			->where('deleted', 0)
+			->where('user_id',$id);
 
 		$this->db->join('crop_crops', 'crop_crops.crop_crops_id = crop.crop', 'left');
 		$this->db->join('crop_variety', 'crop_variety.crop_variety_id = crop.variety', 'left'); 
@@ -133,8 +134,10 @@ class Crop_model extends BF_Model {
 	*/
 	public function get_user_limit_crops($id = NULL, $limit, $offset)
 	{
-		$this->db->select('*')->where('user_id',$id)
-								->limit($limit,$offset);
+		$this->db->select('crop.crop_id, crop.user_id, crop.crop, crop.variety, crop.hectar, crop.certification, crop.comment, crop.deleted, crop.created_on, crop.modified_on, crop_crops.crop_crops_id, crop_crops.crops_gr,crop_crops.crops_en, crop_variety.crop_variety_id,  crop_variety.crop_variety_gr, crop_variety.crop_variety_en')
+				->where('user_id',$id)
+				->where('deleted', 0)
+				->limit($limit,$offset);
 
 		$this->db->join('crop_crops', 'crop_crops.crop_crops_id = crop.crop', 'left');
 		$this->db->join('crop_variety', 'crop_variety.crop_variety_id = crop.variety', 'left'); 
@@ -165,6 +168,7 @@ class Crop_model extends BF_Model {
 	}
 
 	//--------------------------------------------------------------------
+
 
 
 
