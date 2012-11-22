@@ -33,7 +33,7 @@ class Croffer_model extends BF_Model {
 		$this->db->select('
 			crop_offer.id, crop_offer.user_id, crop_offer.crop_id, crop_offer.variety_id, crop_offer.quantity, crop_offer.quantity_type_id, crop_offer.packaging_id, crop_offer.quality_id, crop_offer.price, crop_offer.price_per, crop_offer.release_date, crop_offer.comment, crop_offer.image, crop_offer.deleted, crop_offer.created_on, crop_offer.modified_on, crop.certification,crop_crops.crops_gr,crop_crops.crops_en, crop_variety.crop_variety_gr ,crop_variety.crop_variety_en
 		')
-
+		->where('crop_offer.deleted' , 0)
 		->where('crop_offer.user_id',$user_id);
 
 		$this->db->join('crop_crops', 'crop_crops.crop_crops_id = crop_offer.crop_id', 'left');
@@ -56,7 +56,8 @@ class Croffer_model extends BF_Model {
 	*/
 	public function get_user_limit_croffers($user_id  = NULL, $limit, $offset)
 	{
-		$this->db->select('*')->where('user_id',$user_id)
+		$this->db->select('*')->where('user_id',$user_id) 
+								->where('crop_offer.deleted', 0)
 								->limit($limit,$offset);
 
 		$this->db->join('crop_crops', 'crop_crops.crop_crops_id = crop_offer.crop_id', 'left');

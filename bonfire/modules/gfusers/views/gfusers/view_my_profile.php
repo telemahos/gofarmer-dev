@@ -16,7 +16,7 @@
 </div>
 
 <?php if (isset($user_crops) && is_array($user_crops) && count($user_crops)) : ?>
-<table class='table table-condensed table-hover table-bordered'>
+<table class='table table-condensed table-hover'>
 <!-- <caption></caption> -->
 	<thead>
 		
@@ -47,7 +47,7 @@
 					</td>
 					<td>
 						<a href="<?php echo site_url('crop/crop/edit') . '/' . $crops->crop_id; ?>" class='btn btn-mini pull-left' title='Επεξεργασία'><i class="icon-edit"></i></a>
-						<a href="#modal_del_crop<?php echo $crops->crop_id; ?>" data-toggle="modal" class='btn btn-danger btn-mini pull-right' title='Διαγραφή'><i class="icon-trash icon-white"></i></a>
+						<a id='del-btn' href="#modal_del_crop<?php echo $crops->crop_id; ?>" data-toggle="modal" class='btn btn-mini pull-right' title='Διαγραφή'><i class="icon-trash"></i></a>
 					</td>
 				</tr>
 
@@ -100,7 +100,7 @@
 </h4>
 </div>
 <?php if (isset($user_croffers) && is_array($user_croffers) && count($user_croffers)) : ?>
-<table class='table table-condensed table-hover table-bordered'>
+<table class='table table-condensed table-hover'>
 <!-- <caption></caption> -->
 	<thead>
 		
@@ -109,7 +109,7 @@
 				<th>Ποικιλία</th>
 				<th>Ποσότητα</th>
 				<th>Τιμή</th>
-				<!-- <th>Λεπτομέριες</th> -->
+				<th>&nbsp;</th>
 			</tr>
 		
 	</thead>
@@ -121,13 +121,40 @@
 					<td class='muted'><?php echo $croffers->crop_variety_gr; ?></td>
 					<td class='muted'><b><?php echo $croffers->quantity . '</b> Τόνοι'; ?></td>
 					<td class='muted'><b><?php echo $croffers->price  . ' &#8364;</b> / ανά τόνο '; ?></td>
-					<!-- <td><?php //echo $crops->comment; ?></td> -->
+					<td>
+						<a href="<?php echo site_url('croffer/croffer/edit') . '/' . $croffers->id; ?>" class='btn btn-mini pull-left' title='Επεξεργασία'><i class="icon-edit"></i></a>
+						<a id='del-btn' href="#modal_del_croffer<?php echo $croffers->id; ?>" data-toggle="modal" class='btn btn-mini pull-right' title='Διαγραφή'><i class="icon-trash"></i></a>
+					</td>
 				</tr>
+
+				<!-- Modal modal_del_croffer -->
+				<div id="modal_del_croffer<?php echo $croffers->id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3 id="myModalLabel">Διαγραφή προσφοράς</h3>
+					</div>
+					<div class="modal-body">
+						<p>
+							Θέλετε να διαγράψετε την προσφορά; 
+							<span class='well well-small'>
+							<b><?php echo $croffers->crops_gr; ?></b>
+							<em><?php echo $croffers->crop_variety_gr; ?></em>
+							<b><?php echo $croffers->quantity . '</b> Τόνοι'; ?>
+							</span>
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn" data-dismiss="modal" aria-hidden="true">Άκυρο</button>
+						<a href="<?php echo site_url('croffer/croffer/delete_croffer'); ?>/<?php echo $croffers->id ?>" class="btn btn-danger"><i class='icon-trash icon-white'></i> Διαγραφή</a>
+					</div>
+				</div>
+				<!-- End of Modal -->
+
 			<?php endforeach; ?>
 		<?php endif; ?>
 	</tbody>
 </table>
-	<?php if($total_crops > 5) : ?>
+	<?php if($total_croffers > 5) : ?>
 		<div class='pull-right'><a href="<?php echo site_url('gfusers/gf_my_profile/my_crop_offers'); ?>">εμφάνιση όλων</a></div>
 	<?php endif; ?>
 <?php endif; ?>
@@ -141,7 +168,7 @@
 		<span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu ">
-		<li><a href="<?php echo site_url('croffer/create') ?>">Νέα Ζήτηση</a></li>
+		<li><a href="<?php //echo site_url('croffer/create') ?>">Νέα Ζήτηση</a></li>
 	</ul>
 </div>
 </h4>

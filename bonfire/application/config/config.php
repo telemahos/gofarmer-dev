@@ -20,7 +20,7 @@ $config['modules_locations'] = array(
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost:8888/my-pro/gofarmer-dev-026/';
+$config['base_url']	= 'http://localhost/my-pro/gofarmer-dev-026/';
 
 /*
 |--------------------------------------------------------------------------

@@ -12,9 +12,11 @@
 					<b class="caret"></b>
 				</a>
 				<ul class="dropdown-menu">
+					<li><a href="<?php echo site_url('gfusers/gf_my_profile') ?>">Προφίλ</a></li>
 					<li><a href="<?php echo site_url('crop/add_crop') ?>">Νέα Καλλιέργεια</a></li>
 					<li><a href="<?php echo site_url('croffer/create') ?>">Νέα Προσφορά</a></li>
-					<li><a href="<?php echo site_url('gfusers/gf_my_profile') ?>">Προφίλ</a></li>
+					<li><a href="<?php echo site_url('gfusers/gf_my_profile/following') ?>">Ακολουθώ</a></li>
+					<li><a href="<?php echo site_url('gfusers/gf_my_profile/followers') ?>">Ακόλουθοι</a></li>
 				</ul>
 			</li>
 	    </ul>

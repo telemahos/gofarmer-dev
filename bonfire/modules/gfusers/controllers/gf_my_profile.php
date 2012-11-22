@@ -88,6 +88,7 @@ class gf_my_profile extends Authenticated_Controller {
 		$total_questions =  $this->questions_model->count_by($count_user_questions);
 		Template::set('total_questions', $total_questions);
 
+		Assets::add_module_js('gfusers', 'gfusers.js');
 		Template::set_view('gfusers/gfusers/view_my_profile');
 		Template::render('three_col');
 	}

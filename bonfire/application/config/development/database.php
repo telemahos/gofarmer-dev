@@ -43,8 +43,8 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'root';
-$db['default']['database'] = 'gofarmer-dev-026';
+$db['default']['password'] = '';
+$db['default']['database'] = 'gofarmer-dev';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = 'bf_';
 $db['default']['pconnect'] = TRUE;

@@ -308,5 +308,39 @@ class croffer extends Authenticated_Controller {
 		// Template::set('user_offer', $user_offer);
 
 	}
+	
+	//--------------------------------------------------------------------
+
+	/*
+		Method: delete_croffer()
+
+		Delete the chosen mail .
+	*/
+	public function delete_croffer()
+	{
+		$id = $this->uri->segment(4);
+		if ($this->croffer_model->delete($id))
+		{
+			// Log the activity
+			$this->activity_model->log_activity($this->current_user->id, lang('croffer_act_delete_record').': ' . $this->uri->segment(4) . ' : ' . $this->input->ip_address(), 'croffer');
+
+			Template::set_message(lang('croffer_delete_success'), 'success');
+
+			redirect('/gfusers/gf_my_profile');
+		} else
+		{
+			Template::set_message(lang('croffer_delete_failure') . $this->messages_model->error, 'error');
+		}
+		// $data = array( 'msg_id' => $this->uri->segment(4));
+		// // get the current user mails
+		// $this->messages_model->delete_where($data);
+		
+
+		// Template::set('records', $records);		
+		// Template::redirect('/messages/messages/mails');
+		// Template::render('three_col');
+	}
+
+	//--------------------------------------------------------------------
 
 }
