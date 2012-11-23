@@ -138,7 +138,7 @@ $id = isset($croffer['id']) ? $croffer['id'] : '';
         <div class="form-actions">
             <br/>
             <input type="submit" id="save" name="save" class="btn btn-primary" value="<?php echo lang('croffer_add') ?>" />
-             <?php echo anchor(SITE_AREA .'/content/croffer', lang('croffer_cancel'), 'class="btn btn-warning"'); ?>
+             <?php echo anchor(SITE_AREA .'/content/croffer', lang('croffer_cancel'), 'class="btn"'); ?>
             
         </div>
     </fieldset>

@@ -33,9 +33,35 @@
 						    <!-- <<i></i>mg class="media-object" src="http://placehold.it/64x64"> -->
 						  </a>
 						  <div class="media-body">
-						    <h3 class="media-heading"><a href="<?php echo site_url('croffer/croffer/edit') . '/' . $record->id; ?>"><?php echo $record->crops_gr; ?></a>&nbsp;
-						    	<small>ποικιλία <b><?php echo $record->crop_variety_gr; ?></b></small>
+						    <h3 class="media-heading"><a href="<?php echo site_url('croffer/croffer/edit') . '/' . $record->id; ?>" title='Επεξεργασία'><?php echo $record->crops_gr; ?></a>&nbsp;
+						    	<small>ποικιλία <b><?php echo $record->crop_variety_gr; ?></b>
+						    		<span>&nbsp;&nbsp;&nbsp;<a href="#modal_del_croffer<?php echo $record->id; ?>" data-toggle="modal" class='btn btn-mini' title='Διαγραφή'><i class="icon-trash"></i></a></span>
+						    	</small>
 						    </h3>
+
+						    <!-- Modal modal_del_croffer -->
+							<div id="modal_del_croffer<?php echo $record->id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									<h3 id="myModalLabel">Διαγραφή προσφοράς</h3>
+								</div>
+								<div class="modal-body">
+									<p>
+										Θέλετε να διαγράψετε την προσφορά; 
+										<span class='well well-small'>
+										<b><?php echo $record->crops_gr; ?></b>
+										<em><?php echo $record->crop_variety_gr; ?></em>
+										<b><?php echo $record->quantity . '</b> Τόνοι'; ?>
+										</span>
+									</p>
+								</div>
+								<div class="modal-footer">
+									<button class="btn" data-dismiss="modal" aria-hidden="true">Άκυρο</button>
+									<a href="<?php echo site_url('croffer/croffer/delete_croffer'); ?>/<?php echo $record->id ?>" class="btn btn-danger"><i class='icon-trash icon-white'></i> Διαγραφή</a>
+								</div>
+							</div>
+							<!-- End of Modal -->
+						    
 						    <span class='certification'>
 						    	<?php if($record->certification == 0) : ?>
 									<?php echo '<span class="label"><b>Συμβατική Καλλιέργεια</b></span>'; ?>
@@ -72,7 +98,8 @@
 						    	</span>
 						    </p>
 						    <p><?php echo $record->comment; ?></p>
-						    <small class='muted'>Τελευταία ενημέρωση στις <b><?php echo date('j M, Y', strtotime($record->created_on)); ?></b></small>
+						    <small class='muted'>Τελευταία ενημέρωση στις <b><?php echo date('j M, Y', strtotime($record->created_on)); ?></b>
+						    </small>
 						    
 						  </div> <!-- media-body -->
 						</div> <!-- END of MEDIA -->

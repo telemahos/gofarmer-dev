@@ -80,7 +80,7 @@
        	 	<!-- SUBMIT BUTTON --> 
 	    	<div class="form-actions">
             	<input type="submit" id='crop_sumbit' name="submit" class="btn btn-primary"  value="<?php echo lang('crop_add_submit') ?>" />
-            	<?php echo lang('crop_add_or') ?> <?php echo anchor('/crop', lang('crop_cancel'), 'class="btn"'); ?>
+            	<?php //echo lang('crop_add_or') ?> <?php echo anchor('/crop', lang('crop_cancel'), 'class="btn"'); ?>
         	</div>
 
 	    </fieldset>
