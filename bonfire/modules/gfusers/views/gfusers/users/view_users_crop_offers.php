@@ -1,25 +1,25 @@
 <div class="my-crop-offers">
 	<ul class="nav nav-tabs">
-	<li><a href="<?php echo site_url('gfusers/gf_my_profile') ?>">Προφίλ</a></li>
-    <li>
-    	<a href="<?php echo site_url('gfusers/gf_my_profile/my_crops') ?>">Καλλιέργειες</a>
-    </li>
-    <li class="active"><a href="<?php echo site_url('gfusers/gf_my_profile/my_crop_offers'); ?>">Προσφορές</a></li>
-    <li><a href="<?php echo site_url('gfusers/gf_my_profile/following') ?>">Ακολουθώ</a></li>
-	<li><a href="<?php echo site_url('gfusers/gf_my_profile/followers') ?>">Ακόλουθοι</a></li>
-    <li class="dropdown pull-right">
-		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-			<b class="caret"></b>
-		</a>
-		<ul class="dropdown-menu">
-			<li><a href="<?php echo site_url('gfusers/gf_my_profile') ?>">Προφίλ</a></li>
-			<li><a href="<?php echo site_url('crop/add_crop') ?>">Νέα Καλλιέργεια</a></li>
-			<li><a href="<?php echo site_url('croffer/create') ?>">Νέα Προσφορά</a></li>
-			
-		</ul>
-	</li>
-</ul>
-<br>
+		<li><a href="<?php echo site_url('gfusers/gf_users_profile/users_profile') . '/' . $user->id; ?>"><?php echo $user->username; ?></a></li>
+	    <li>
+	    	<a href="<?php echo site_url('gfusers/gf_users_profile/users_crops') . '/' . $user->id; ?>">Καλλιέργειες</a>
+	    </li>
+	    <li class="active"><a href="#">Προσφορές</a></li>
+	    <li><a href="<?php echo site_url('gfusers/gf_users_profile/users_following')  . '/' . $user->id; ?>">Ακολουθεί</a></li>
+		<li><a href="<?php echo site_url('gfusers/gf_users_profile/users_followers')  . '/' . $user->id; ?>">Ακολουθείτε</a></li>
+	    <li class="dropdown pull-right">
+				<a class="dropdown-toggle"
+				data-toggle="dropdown"
+				href="#">
+				
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="<?php echo site_url('gfusers/gf_users_profile/users_profile') . '/' . $user->id; ?>"><?php echo $user->username; ?></a></li>
+				</ul>
+			</li>
+    </ul>
+    <br>
 	<!-- <h3>Οι προσφορές μου<?php //echo lang('crop_view_my_crops_title') ?></h3><hr> -->
 
 	<?php echo form_open($this->uri->uri_string()); ?>	
@@ -32,34 +32,10 @@
 						    <!-- <<i></i>mg class="media-object" src="http://placehold.it/64x64"> -->
 						  </a>
 						  <div class="media-body">
-						    <h3 class="media-heading"><a href="<?php echo site_url('croffer/croffer/edit') . '/' . $record->id; ?>" title='Επεξεργασία'><?php echo $record->crops_gr; ?></a>&nbsp;
+						    <h3 class="media-heading"><a href="#<?php //echo '/' . $record->id; ?>" title='Επεξεργασία'><?php echo $record->crops_gr; ?></a>&nbsp;
 						    	<small>ποικιλία <b><?php echo $record->crop_variety_gr; ?></b>
-						    		<span>&nbsp;&nbsp;&nbsp;<a href="#modal_del_croffer<?php echo $record->id; ?>" data-toggle="modal" class='btn btn-mini' title='Διαγραφή'><i class="icon-trash"></i></a></span>
 						    	</small>
 						    </h3>
-
-						    <!-- Modal modal_del_croffer -->
-							<div id="modal_del_croffer<?php echo $record->id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-									<h3 id="myModalLabel">Διαγραφή προσφοράς</h3>
-								</div>
-								<div class="modal-body">
-									<p>
-										Θέλετε να διαγράψετε την προσφορά; 
-										<span class='well well-small'>
-										<b><?php echo $record->crops_gr; ?></b>
-										<em><?php echo $record->crop_variety_gr; ?></em>
-										<b><?php echo $record->quantity . '</b> Τόνοι'; ?>
-										</span>
-									</p>
-								</div>
-								<div class="modal-footer">
-									<button class="btn" data-dismiss="modal" aria-hidden="true">Άκυρο</button>
-									<a href="<?php echo site_url('croffer/croffer/delete_croffer'); ?>/<?php echo $record->id ?>" class="btn btn-danger"><i class='icon-trash icon-white'></i> Διαγραφή</a>
-								</div>
-							</div>
-							<!-- End of Modal -->
 						    
 						    <span class='certification'>
 						    	<?php if($record->certification == 0) : ?>

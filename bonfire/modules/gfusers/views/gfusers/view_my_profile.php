@@ -1,3 +1,24 @@
+<ul class="nav nav-tabs">
+	<li class="active"><a href="<?php echo site_url('gfusers/gf_my_profile') ?>">Προφίλ</a></li>
+    <li>
+    	<a href="<?php echo site_url('gfusers/gf_my_profile/my_crops') ?>">Καλλιέργειες</a>
+    </li>
+    <li><a href="<?php echo site_url('gfusers/gf_my_profile/my_crop_offers'); ?>">Προσφορές</a></li>
+    <li><a href="<?php echo site_url('gfusers/gf_my_profile/following') ?>">Ακολουθώ</a></li>
+	<li><a href="<?php echo site_url('gfusers/gf_my_profile/followers') ?>">Ακόλουθοι</a></li>
+    <li class="dropdown pull-right">
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a href="<?php echo site_url('gfusers/gf_my_profile') ?>">Προφίλ</a></li>
+			<li><a href="<?php echo site_url('crop/add_crop') ?>">Νέα Καλλιέργεια</a></li>
+			<li><a href="<?php echo site_url('croffer/create') ?>">Νέα Προσφορά</a></li>
+			
+		</ul>
+	</li>
+</ul>
+<br>
 <div class="page-header">
 <!-- View User's crops -->
 <!-- ################################################################## -->

@@ -185,7 +185,16 @@ label.required{font-weight: bold}
 	color: #FF6600;
 }
 .mini-layout.front-marketing {
-	background: #;
+	background: ;
+}
+
+#welcome .mini-layout {
+  background: #ffffff;
+}
+#welcome .mini-layout img {
+  /*margin-right: 100px;*/
+  opacity: 0.2;
+  padding-left: 10px;
 }
 
 .front-marketing small.marketing-slogan

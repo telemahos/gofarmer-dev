@@ -59,13 +59,16 @@
 				<thead>
 					<tr>
 						<th class="span4">
-							<a href="#"><?php echo $total_crops; ?></a>
+							<a href="<?php echo site_url('gfusers/gf_users_profile/users_crops') . '/' . $user->id; ?>"><?php echo $total_crops; ?></a>
 						</th>
 						<th class="span4">
-							<a href="#"><?php echo $total_croffers; ?></a>
+							<a href="<?php echo site_url('gfusers/gf_users_profile/users_crop_offers') . '/' . $user->id; ?>"><?php echo $total_croffers; ?></a> 
 						</th >
 						<th class="span4">
-							<a href="#"><?php echo $total_followers; ?></a>
+							<a href="<?php echo site_url('gfusers/gf_users_profile/users_following') . '/' . $user->id; ?>"><?php echo $total_following; ?></a>
+						</th>
+						<th class="span4">
+							<a href="<?php echo site_url('gfusers/gf_users_profile/users_followers') . '/' . $user->id; ?>"><?php echo $total_followers; ?></a>
 						</th>
 					</tr>
 				</thead>
@@ -79,6 +82,9 @@
 						</td>
 						<td class="span4">
 							Ακολουθεί&nbsp;
+						</td>
+						<td class="span3">
+							ακόλουθοι&nbsp;
 						</td>
 					</tr>
 				</tbody>
