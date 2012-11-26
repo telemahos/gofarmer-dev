@@ -52,6 +52,42 @@ class wizard extends Authenticated_Controller {
 
 
 	/*
+		Method: wizard_farmer()
+
+		Displays a list of form data.
+	*/
+	public function wizard_farmer_two()
+	{
+		$this->load->module('crop');
+		$this->load->model('crop_model', null, true);
+		$this->lang->load('crop');
+		
+		Template::set_view('starter/wizard/view_farmer_two');
+		Template::render();
+	}
+
+	//--------------------------------------------------------------------
+
+
+	/*
+		Method: wizard_farmer()
+
+		Displays a list of form data.
+	*/
+	public function wizard_farmer_three()
+	{
+		$this->load->module('croffer');
+		$this->load->model('croffer_model', null, true);
+		$this->lang->load('croffer');
+		
+		Template::set_view('starter/wizard/view_farmer_three');
+		Template::render();
+	}
+
+	//--------------------------------------------------------------------
+
+
+	/*
 		Method: wizard_company()
 
 		Displays a list of form data.
