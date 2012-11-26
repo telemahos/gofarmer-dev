@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class welcome extends Front_Controller {
+class welcome extends Authenticated_Controller {
 
 	//--------------------------------------------------------------------
 

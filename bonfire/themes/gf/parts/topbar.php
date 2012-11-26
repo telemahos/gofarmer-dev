@@ -99,6 +99,11 @@
 											<i class="icon-tasks"></i>  <?php //echo lang('bf_nav_crops') ?>Blog
 										</a>
 									</li>
+									<li>
+										<a href="<?php echo site_url('starter/welcome');?>">
+											<i class="icon-tasks"></i>  <?php //echo lang('bf_nav_crops') ?>Οδηγός
+										</a>
+									</li>
 								</ul>
 						</li>
 						<li><a href="<?php echo site_url('messages/mails');?>" title='Δείτε τα μηνύματα'><i class="icon-envelope"></i>  
