@@ -10,12 +10,12 @@
 			    <br>
 			    <div class='mini-layout'>
 			    	<div class="media">
-						<a class="span2 pull-left" href="<?php echo site_url('starter/wizard/wizard_farmer');?>">
+						<a class="span2 pull-left" href="<?php echo site_url('wizard/wizard/wizard_farmer');?>">
 							<img class="media-object" src="<?php echo base_url('assets/images/farmer.png') ?>" width='50'>
 						</a>
 						<div class="media-body">
 							<h4 class="media-heading">
-								<a href="<?php echo site_url('starter/wizard/wizard_farmer');?>">Παραγωγός</a>&nbsp;<small>Θέλω να παρουσιάσω τις καλλιέργειες και τις προσφορές μου</small>
+								<a href="<?php echo site_url('wizard/wizard/wizard_farmer');?>">Παραγωγός</a>&nbsp;<small>Θέλω να παρουσιάσω τις καλλιέργειες και τις προσφορές μου</small>
 							</h4>
 							Αυτός ο λογαριασμός σας δίνει την δυνατότητα να μετέχεται σε όλες τις δραστηριότητες, να δηλώσετε τις καλλιέργειές και κάνετε προσφορές αγοτικών προϊόντων.
 						</div>

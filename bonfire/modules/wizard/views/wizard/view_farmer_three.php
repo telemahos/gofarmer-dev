@@ -8,21 +8,21 @@
 			</div> -->
 			<div class="span2 offset3 muted">
 				<h4>1. Βήμα </h4>
-				<p>Προσωπικά στοιχεία</p>
+				Προσωπικά στοιχεία
 				<div class="progress">
 			    	<div class="bar" style="width: 0%;"></div>
 			    </div>
 			</div>	
 			<div class="span2 muted">
 				<h4>2. Βήμα </h4>
-				<p>Δήλωση καλλιεργειών</p>
+				Δήλωση καλλιεργειών
 				<div class="progress ">
 			    	<div class="bar" style="width: 0%;"></div>
 			    </div>
 			</div>	
 			<div class="span2">
 				<h4>3. Βήμα </h4>
-				<p>Δημιουργία προσφοράς</p>
+				Δημιουργία προσφοράς
 				<div class="progress progress-striped active">
 			    	<div class="bar" style="width: 100%;"></div>
 			    </div>
@@ -53,7 +53,8 @@
 						?>
 
 						<div class="">
-						    <h4><?php echo lang('croffer_title') ?></h4>
+						    <h3>Δημιουργία προσφοράς<?php // echo lang('croffer_title') ?></h3>
+						    <p>Οι πληροφορίες αυτές θα βοηθήσουν να σας βρούνε και άλλες εταιρίες στο GoFarmer</p>
 						  <!--   <div id='tips'>
 						        <div class="alert alert-info fade in">
 						            <button type="button" class="close" data-dismiss="alert">×</button>
@@ -120,20 +121,20 @@
 						        </div>
 
 
-						        <div class="control-group <?php echo form_error('croffer_quality_id') ? 'error' : ''; ?>">
-						            <?php echo form_label(lang('croffer_quality'), 'croffer_quality_id', array('class' => "control-label") ); ?>
+						        <!-- <div class="control-group <?php //echo form_error('croffer_quality_id') ? 'error' : ''; ?>">
+						            <?php //echo form_label(lang('croffer_quality'), 'croffer_quality_id', array('class' => "control-label") ); ?>
 						            <div class='controls'>
 						                <select name="croffer_quality_id" id='croffer_quality_id'>
-						                    <option value='1'><?php echo lang('croffer_quality_a'); ?></option>
-						                    <option value='2'><?php echo lang('croffer_quality_b'); ?></option>
-						                    <option value='3'><?php echo lang('croffer_quality_c'); ?></option>
-						                    <option value='4'><?php echo lang('croffer_quality_d'); ?></option>
-						                    <option value='5'><?php echo lang('croffer_quality_e'); ?></option>
-						                    <option value='6'><?php echo lang('croffer_quality_f'); ?></option>
+						                    <option value='1'><?php //echo lang('croffer_quality_a'); ?></option>
+						                    <option value='2'><?php //echo lang('croffer_quality_b'); ?></option>
+						                    <option value='3'><?php //echo lang('croffer_quality_c'); ?></option>
+						                    <option value='4'><?php //echo lang('croffer_quality_d'); ?></option>
+						                    <option value='5'><?php //echo lang('croffer_quality_e'); ?></option>
+						                    <option value='6'><?php //echo lang('croffer_quality_f'); ?></option>
 						                </select>
-						                <span class="help-inline"><?php echo lang('croffer_quality_help'); ?></span>
+						                <span class="help-inline"><?php //echo lang('croffer_quality_help'); ?></span>
 						            </div>
-						        </div>
+						        </div> -->
 
 
 						        <div class="control-group <?php echo form_error('croffer_price') ? 'error' : ''; ?>">
@@ -149,21 +150,21 @@
 						            </div>
 						        </div>
 
-						        <div class="control-group <?php echo form_error('croffer_release_date') ? 'error' : ''; ?>">
-						            <?php echo form_label(lang('croffer_release'), 'croffer_release_date', array('class' => "control-label") ); ?>
+						        <!-- <div class="control-group <?php //echo form_error('croffer_release_date') ? 'error' : ''; ?>">
+						            <?php //echo form_label(lang('croffer_release'), 'croffer_release_date', array('class' => "control-label") ); ?>
 						            <div class='controls'>
-						            <input id="croffer_release_date" type="text" name="croffer_release_date" maxlength="30" value="<?php echo set_value('croffer_release_date', isset($croffer['croffer_release_date']) ? $croffer['croffer_release_date'] : ''); ?>"  />
-						            <span class="help-inline"><?php echo lang('croffer_release_help') ?></span>
+						            <input id="croffer_release_date" type="text" name="croffer_release_date" maxlength="30" value="<?php //echo set_value('croffer_release_date', isset($croffer['croffer_release_date']) ? $croffer['croffer_release_date'] : ''); ?>"  />
+						            <span class="help-inline"><?php //echo lang('croffer_release_help') ?></span>
 						            </div>
-						        </div>
+						        </div> -->
 
-						        <div class="control-group <?php echo form_error('croffer_comment') ? 'error' : ''; ?>">
-						            <?php echo form_label(lang('croffer_comment'), 'croffer_comment', array('class' => "control-label") ); ?>
+						        <!-- <div class="control-group <?php //echo form_error('croffer_comment') ? 'error' : ''; ?>">
+						            <?php //echo form_label(lang('croffer_comment'), 'croffer_comment', array('class' => "control-label") ); ?>
 						            <div class='controls'>
-						                <?php echo form_textarea( array( 'name' => 'croffer_comment', 'id' => 'croffer_comment', 'rows' => '5', 'cols' => '80', 'value' => set_value('croffer_comment', isset($croffer['croffer_comment']) ? $croffer['croffer_comment'] : '') ) )?>
-						                <span class="help-inline"><?php echo lang('croffer_comment_help') ?></span>
+						                <?php //echo form_textarea( array( 'name' => 'croffer_comment', 'id' => 'croffer_comment', 'rows' => '5', 'cols' => '80', 'value' => set_value('croffer_comment', isset($croffer['croffer_comment']) ? $croffer['croffer_comment'] : '') ) )?>
+						                <span class="help-inline"><?php //echo lang('croffer_comment_help') ?></span>
 						            </div>
-						        </div>
+						        </div> -->
 
 						        <!-- <div class="control-group <?php //echo form_error('croffer_image') ? 'error' : ''; ?>">
 						            <?php //echo form_label(lang('croffer_image'), 'croffer_image', array('class' => "control-label") ); ?>
@@ -176,9 +177,9 @@
 
 
 						        <div class="form-actions">
-						            <?php echo anchor('starter/wizard/wizard_farmer_two',  '<i class="icon-circle-arrow-left"></i>&nbsp;Πίσω', 'class=""'); ?>&nbsp;&nbsp;
+						            <?php echo anchor('wizard/wizard/wizard_farmer_two',  '<i class="icon-circle-arrow-left"></i>&nbsp;Πίσω', 'class=""'); ?>&nbsp;&nbsp;
 							        <?php echo anchor('/gfusers/gfusers',  'Παράβλεψη', 'class=""'); ?>&nbsp;&nbsp;
-							        <?php echo anchor('starter/wizard/wizard_farmer_four',  'Αποθήκευση και συνέχεια', 'class="btn btn-primary"'); ?>
+							        <?php echo anchor('gfusers/gf_my_profile',  'Αποθήκευση και συνέχεια', 'class="btn btn-primary"'); ?>
 						            <!-- <input type="submit" id="save" name="save" class="btn btn-primary" value="<?php //echo lang('croffer_add') ?>" />
 						             <?php //echo anchor(SITE_AREA .'/content/croffer', lang('croffer_cancel'), 'class="btn"'); ?> -->
 						            

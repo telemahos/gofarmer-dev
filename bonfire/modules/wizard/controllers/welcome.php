@@ -10,7 +10,7 @@ class welcome extends Authenticated_Controller {
 		parent::__construct();
 
 		$this->load->library('form_validation');
-		$this->lang->load('starter');
+		$this->lang->load('wizard');
 
 		// Load the messages MODULE
 		// $this->load->module('messages');
@@ -36,7 +36,7 @@ class welcome extends Authenticated_Controller {
 		}
 
 
-		Template::set_view('starter/starter/view_welcome');
+		Template::set_view('wizard/wizard/view_welcome');
 		/*Template::set_view('starter/home/index');*/
 		Template::render();
 	}

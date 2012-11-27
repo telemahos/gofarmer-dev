@@ -100,7 +100,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="<?php echo site_url('starter/welcome');?>">
+										<a href="<?php echo site_url('wizard/welcome');?>">
 											<i class="icon-tasks"></i>  <?php //echo lang('bf_nav_crops') ?>Οδηγός
 										</a>
 									</li>

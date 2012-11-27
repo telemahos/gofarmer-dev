@@ -8,21 +8,21 @@
 			</div> -->
 			<div class="span2 offset3 muted">
 				<h4>1. Βήμα </h4>
-				<p>Προσωπικά στοιχεία</p>
+				Προσωπικά στοιχεία
 				<div class="progress">
 			    	<div class="bar" style="width: 0%;"></div>
 			    </div>
 			</div>	
 			<div class="span2">
 				<h4>2. Βήμα </h4>
-				<p>Δήλωση καλλιεργειών</p>
+				Δήλωση καλλιεργειών
 				<div class="progress progress-striped active">
 			    	<div class="bar" style="width: 100%;"></div>
 			    </div>
 			</div>	
-			<div class="span2">
+			<div class="span2 muted">
 				<h4>3. Βήμα </h4>
-				<p>Δημιουργία προσφοράς</p>
+				Δημιουργία προσφοράς
 				<div class="progress">
 			    	<div class="bar" style="width: 0%;"></div>
 			    </div>
@@ -55,7 +55,7 @@
 
 
 					<div class="">
-					    <h3><?php echo lang('crop_add_title'); ?></h3>
+					    <h3><?php //echo lang('crop_add_title'); ?>Δήλωση καλλιέργειας</h3>
 					    <p>Οι πληροφορίες αυτές θα βοηθήσουν να βρείτε και άλλες εταιρίες στο GoFarmer</p>
 					    <?php echo form_open($this->uri->uri_string(), 'class="form-horizontal"'); ?>
 						    <fieldset>
@@ -110,20 +110,20 @@
 					          </div>
 
 					          <!-- Form Textarea for Comments -->
-					          <div class="control-group">
-					            <?php echo form_label(lang('crop_add_comment'), 'comment', array('class' => "control-label")); ?>
+					          <!-- <div class="control-group">
+					            <?php //echo form_label(lang('crop_add_comment'), 'comment', array('class' => "control-label")); ?>
 					            <div class='controls'>
 					              <textarea id="comment" name="comment" placeholder='Σχόλιο' rows="5"> </textarea>
-					              <span class="help-inline" id="result"><?php echo lang('crop_add_tarea_help') ?></span>
+					              <span class="help-inline" id="result"><?php //echo lang('crop_add_tarea_help') ?></span>
 					            </div>  
-					          </div>
+					          </div> -->
 
 					       	 	<!-- SUBMIT BUTTON --> 
 						    	<div class="form-actions">
 
-						    		<?php echo anchor('starter/wizard/wizard_farmer',  '<i class="icon-circle-arrow-left"></i>&nbsp;Πίσω', 'class=""'); ?>&nbsp;&nbsp;
+						    		<?php echo anchor('wizard/wizard/wizard_farmer',  '<i class="icon-circle-arrow-left"></i>&nbsp;Πίσω', 'class=""'); ?>&nbsp;&nbsp;
 							        <?php echo anchor('/gfusers/gfusers',  'Παράβλεψη', 'class=""'); ?>&nbsp;&nbsp;
-							        <?php echo anchor('starter/wizard/wizard_farmer_three',  'Αποθήκευση και συνέχεια', 'class="btn btn-primary"'); ?>
+							        <?php echo anchor('wizard/wizard/wizard_farmer_three',  'Αποθήκευση και συνέχεια', 'class="btn btn-primary"'); ?>
 					            	<!-- <input type="submit" id='crop_sumbit' name="submit" class="btn btn-primary"  value="<?php //echo lang('crop_add_submit') ?>" /> -->
 					            	<?php //echo lang('crop_add_or') ?> <?php //echo anchor('/crop', lang('crop_cancel'), 'class="btn"'); ?>
 					        	</div>
