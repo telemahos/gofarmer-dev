@@ -309,7 +309,6 @@ class gfusers extends Authenticated_Controller {
 
 		// get the current user information
 		$gfusers = $this->gfusers_model->find_by("user_id",$this->current_user->id);
-		//print_r($gfusers);
 		Assets::add_module_js('gfusers', 'gfusers.js');
 
 		Template::set('gfusers', $gfusers);
@@ -333,7 +332,7 @@ class gfusers extends Authenticated_Controller {
 	 *
 	 * @return bool
 	 */
-	private function save_user_personal_data($type='insert', $id=0)
+	public function save_user_personal_data($type='insert', $id=0)
 	{
 
 		//$_POST['id'] = $id;
@@ -409,9 +408,9 @@ class gfusers extends Authenticated_Controller {
 		// $data['is_company']        = $this->input->post('is_company');
 		// $data['is_user']        = $this->input->post('is_user');
 
-		$data['is_farmer']        = "1";
-		$data['is_company']        = "0";
-		$data['is_user']        = "1";
+		$data['is_farmer']        = $this->input->post('is_farmer');;
+		$data['is_company']        = $this->input->post('is_company');;
+		$data['is_user']        = $this->input->post('is_user');;
 
 		if ($type == 'insert')
 		{

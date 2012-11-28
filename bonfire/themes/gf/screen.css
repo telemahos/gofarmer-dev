@@ -34,20 +34,20 @@ a:hover {
 }
 .body {
 	background-color: #fff;
-	border: 1px solid #DDD;
+	/*border: 1px solid #DDD;*/
 	border-top: none;
 
-	-webkit-box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+	/*-webkit-box-shadow: 0 1px 10px rgba(0,0,0,0.1);
 	-moz-box-shadow: 0 1px 10px rgba(0,0,0,0.1);
-	box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+	box-shadow: 0 1px 10px rgba(0,0,0,0.1);*/
 
 	padding: 60px 20px 20px 20px;
 	z-index: 1;
 	min-height: 600px;
 
-	-webkit-border-radius: 10px;
+	/*-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
-	border-radius: 10px;
+	border-radius: 10px;*/
 }
 .hero-unit p{
 	font-size: 14px;
@@ -63,7 +63,7 @@ footer.footer {
 .narrow-body .container {
 	max-width: 800px;
 	min-height: 440px;
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 }
 
 .clearfix:before,
@@ -319,7 +319,7 @@ html {
   min-height:100%;
 }
 body {
-  background: #eaeaea; /*F7F7F7*/
+  background: #ffffff; /*F7F7F7 eaeaea*/
   min-height:100%;
   font-size: 13px;
   font-weight: normal;

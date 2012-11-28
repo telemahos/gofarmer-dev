@@ -15,7 +15,7 @@
 			</div>	
 			<div class="span2">
 				<h4>2. Βήμα </h4>
-				Δήλωση καλλιεργειών
+				Δήλωση καλλιέργειας
 				<div class="progress progress-striped active">
 			    	<div class="bar" style="width: 100%;"></div>
 			    </div>
@@ -64,8 +64,9 @@
 					            <div class="control-group <?php echo form_error('crop_crops') ? 'error' : ''; ?>">
 					                <?php echo form_label(lang('crop_add_crop') . lang('bf_form_label_required'), 'crop_crops', array('class' => "control-label") ); ?>
 					                <div class='controls'>
-					                    <select name="crop_crops" id='crop_crops'>
-					                        <option value="0"><?php echo lang('crop_add_crop_select'); ?></option>
+					                    <select name="crop_crops" data-placeholder="<?php echo lang('crop_add_crop_select'); ?>" id='crop_crops' class="chzn-select span7">
+					                        <!-- <option value="0"><?php //echo lang('crop_add_crop_select'); ?></option> -->
+					                        <option value=""></option> 
 					                        <?php if(isset($crop_crops)) : foreach ($crop_crops as $crops): ?>
 					                            <!-- Make an selected control point -->
 					                            <?php if($mylang == "greek"): ?>
@@ -122,9 +123,9 @@
 						    	<div class="form-actions">
 
 						    		<?php echo anchor('wizard/wizard/wizard_farmer',  '<i class="icon-circle-arrow-left"></i>&nbsp;Πίσω', 'class=""'); ?>&nbsp;&nbsp;
-							        <?php echo anchor('/gfusers/gfusers',  'Παράβλεψη', 'class=""'); ?>&nbsp;&nbsp;
-							        <?php echo anchor('wizard/wizard/wizard_farmer_three',  'Αποθήκευση και συνέχεια', 'class="btn btn-primary"'); ?>
-					            	<!-- <input type="submit" id='crop_sumbit' name="submit" class="btn btn-primary"  value="<?php //echo lang('crop_add_submit') ?>" /> -->
+							        <?php echo anchor('/wizard/wizard/wizard_farmer_three',  'Παράβλεψη', 'class=""'); ?>&nbsp;&nbsp;
+							       <!--  <?php //echo anchor('wizard/wizard/wizard_farmer_three',  'Αποθήκευση και συνέχεια', 'class="btn btn-primary"'); ?> -->
+					            	<input type="submit" id='crop_sumbit' name="submit" class="btn btn-primary"  value="Αποθήκευση και συνέχεια	<?php //echo lang('crop_add_submit') ?>" />
 					            	<?php //echo lang('crop_add_or') ?> <?php //echo anchor('/crop', lang('crop_cancel'), 'class="btn"'); ?>
 					        	</div>
 

@@ -15,7 +15,7 @@
 			</div>	
 			<div class="span2 muted">
 				<h4>2. Βήμα </h4>
-				Δήλωση καλλιεργειών
+				Δήλωση καλλιέργειας
 				<div class="progress ">
 			    	<div class="bar" style="width: 0%;"></div>
 			    </div>
@@ -179,7 +179,7 @@
 						        <div class="form-actions">
 						            <?php echo anchor('wizard/wizard/wizard_farmer_two',  '<i class="icon-circle-arrow-left"></i>&nbsp;Πίσω', 'class=""'); ?>&nbsp;&nbsp;
 							        <?php echo anchor('/gfusers/gfusers',  'Παράβλεψη', 'class=""'); ?>&nbsp;&nbsp;
-							        <?php echo anchor('gfusers/gf_my_profile',  'Αποθήκευση και συνέχεια', 'class="btn btn-primary"'); ?>
+							        <?php echo anchor('gfusers/gf_my_profile',  'Αποθήκευση και ολοκλήρωση', 'class="btn btn-primary"'); ?>
 						            <!-- <input type="submit" id="save" name="save" class="btn btn-primary" value="<?php //echo lang('croffer_add') ?>" />
 						             <?php //echo anchor(SITE_AREA .'/content/croffer', lang('croffer_cancel'), 'class="btn"'); ?> -->
 						            

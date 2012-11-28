@@ -10,6 +10,7 @@ class welcome extends Authenticated_Controller {
 		parent::__construct();
 
 		$this->load->library('form_validation');
+		$this->load->model('wizard_model', null, true);
 		$this->lang->load('wizard');
 
 		// Load the messages MODULE
@@ -34,10 +35,14 @@ class welcome extends Authenticated_Controller {
 			Template::set_message(lang('us_register_disabled'), 'error');
 			Template::redirect('/');
 		}
+		// get the completed wizard user information
+		$user = $this->wizard_model->find_by("user_id",$this->current_user->id);
+		// Template::set('user', $user);
 
-
-		Template::set_view('wizard/wizard/view_welcome');
-		/*Template::set_view('starter/home/index');*/
-		Template::render();
+		$this->load->view('wizard/wizard/header');
+		$this->load->view('wizard/wizard/view_welcome', $user);
+		$this->load->view('wizard/wizard/footer');
+		// Template::set_view('wizard/wizard/view_welcome');
+		// Template::render();
 	}
 }
