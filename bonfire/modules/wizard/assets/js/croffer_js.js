@@ -21,8 +21,8 @@ $("select#croffer_crop_id").change( function() {
     $("#slider").slider({
         range: "min",
         min: 0,
-        max: 1000,
-        value: 10,
+        max: 120,
+        value: 12,
         slide: function (event, ui) {
             $("#amount").val(ui.value);
         }

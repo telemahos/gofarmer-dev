@@ -51,13 +51,7 @@
   <script>window.jQuery || document.write('<script src="<?php echo js_path(); ?>jquery.js"><\/script>')</script>
 
   <?php Assets::add_js( 'jquery.pnotify.min.js' ); ?>
-  <script type="text/javascript">
-    // $(function(){
-    //     $.pnotify({
-    //         history: false
-    //     });
-    // });
-    </script>
+
   <!-- This would be a good place to use a CDN version of jQueryUI if needed -->
 	<?php echo Assets::js(); ?>
 

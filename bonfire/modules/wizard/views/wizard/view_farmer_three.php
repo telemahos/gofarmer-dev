@@ -69,21 +69,20 @@
 						    </div>
 						<?php endif; ?>
 
+						<!-- Test Noify -->
+						<button class="btn source" onclick="$.pnotify({
+							title: 'No History Notice',
+							text: 'I\'m not part of the notice history, so if you redisplay the last message, it won\'t be me.',
+							type: 'success',
+							history: false
+						});">No History Notice</button>
 
-<button class="btn source" onclick="$.pnotify({
-						title: 'No History Notice',
-						text: 'I\'m not part of the notice history, so if you redisplay the last message, it won\'t be me.',
-						type: 'success',
-						history: false
-					});">No History Notice</button>
-
-
-					<p>
-              <label for="amount">Volume:</label>
-              <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" readonly="readonly"/>
-            </p>
-
-            <div id="slider" style="width:200px;"></div>
+						<!-- Test slider -->
+						<p>
+			              <label for="amount">Volume:</label>
+			              <input type="text" id="amount" class='span4' readonly="readonly"/>
+			            </p>
+	            		<div id="slider" style="width:200px;"></div>
 
 
 						    

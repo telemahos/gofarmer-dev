@@ -42,8 +42,8 @@ class messages extends Authenticated_Controller {
 
 			Assets::add_module_js('messages', 'messages.js');
 			// Assets::add_js(Template::theme_url('js/editors/ckeditor/ckeditor.js'));
-			Assets::add_css('flick/jquery-ui-1.8.13.custom.css');
-			Assets::add_js('jquery-ui-1.8.13.min.js');
+			Assets::add_css('ui-lightness/jquery-ui-1.9.2.custom.css');
+			Assets::add_js('js/jquery-ui-1.9.2.custom.min.js');
 
 			if ($this->auth->is_logged_in() === TRUE)
 			{
