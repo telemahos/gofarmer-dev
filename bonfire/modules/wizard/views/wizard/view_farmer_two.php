@@ -1,6 +1,6 @@
 <div class="row-fluid">
 	<div class="span12">
-
+		
 	
 		<div id="wizard">
 			<!-- <div class="page-header">
@@ -64,7 +64,7 @@
 					            <div class="control-group <?php echo form_error('crop_crops') ? 'error' : ''; ?>">
 					                <?php echo form_label(lang('crop_add_crop') . lang('bf_form_label_required'), 'crop_crops', array('class' => "control-label") ); ?>
 					                <div class='controls'>
-					                    <select name="crop_crops" data-placeholder="<?php echo lang('crop_add_crop_select'); ?>" id='crop_crops' class="chzn-select span7">
+					                    <select name="crop_crops" data-placeholder="<?php echo lang('crop_add_crop_select'); ?>" id='crop_crops' class="chzn-select span4">
 					                        <!-- <option value="0"><?php //echo lang('crop_add_crop_select'); ?></option> -->
 					                        <option value=""></option> 
 					                        <?php if(isset($crop_crops)) : foreach ($crop_crops as $crops): ?>

@@ -194,7 +194,7 @@ class croffer extends Authenticated_Controller {
 			An INT id for successful inserts. If updating, returns TRUE on success.
 			Otherwise, returns FALSE.
 	*/
-	private function save_croffer($type='insert', $id=0)
+	public function save_croffer($type='insert', $id=0)
 	{
 		if ($type == 'update') {
 			$_POST['id'] = $id;

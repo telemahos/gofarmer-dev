@@ -1,7 +1,7 @@
 <?php
 	// Setup our default assets to load.
 	Assets::add_js( 'bootstrap.min.js' );
-	Assets::add_css( array('bootstrap.min.css', 'bootstrap-responsive.min.css'));
+	Assets::add_css( array('bootstrap.min.css', 'bootstrap-responsive.min.css','jquery.pnotify.default.css', 'jquery.pnotify.default.icons.css'));
 			
 	$inline  = '$(".dropdown-toggle").dropdown();';
 	$inline .= '$(".tooltips").tooltip();';

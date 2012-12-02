@@ -13,6 +13,10 @@ class wizard extends Authenticated_Controller {
 		$this->load->model('wizard_model', null, true);
 		$this->lang->load('wizard');
 		
+		Assets::add_js( 'jquery.pnotify.min.js' );
+		Assets::add_css( 'jquery.pnotify.default.css'); 
+		Assets::add_css( 'jquery.pnotify.default.icons.css');
+
 		Assets::add_css( 'chosen.css' ); 
 		Assets::add_js( 'chosen.jquery.min.js' );
 		$inline  = '$(".chzn-select").chosen(); $(".chzn-select-deselect").chosen({allow_single_deselect:true});';
@@ -170,9 +174,40 @@ class wizard extends Authenticated_Controller {
 		$this->load->module('croffer');
 		$this->load->model('croffer_model', null, true);
 		$this->lang->load('croffer');
+
+		$this->load->module('crop');
+		$this->load->model('crop_model', null, true);
+
+		if ($this->input->post('save'))
+		{
+			if ($insert_id = $this->croffer->save_croffer())
+			{
+				// Log the activity
+				$this->activity_model->log_activity($this->current_user->id, lang('croffer_act_create_record').': ' . $insert_id . ' : ' . $this->input->ip_address(), 'croffer');
+
+				// Template::set_message(lang('croffer_create_success'), 'success');
+				// Template::set_view('croffer/croffer/view_add_croffer');
+				// redirect($this->uri->uri_string());
+				$inline  = "$.pnotify({ title: 'Η προσφορά καταχωρήθηκε', text: 'Θέλετε να κάνετε άλλη;', type: 'success', history: false});";
+				Assets::add_js( $inline, 'inline' );
+
+				// redirect($this->uri->uri_string());
+			}
+			else
+			{
+				$inline  = "$.pnotify({ title: 'Λάθος', text: 'Προσπαθήστε ξανά;', type: 'error', history: false});";
+				Assets::add_js( $inline, 'inline' );
+				// Template::set_message(lang('croffer_create_failure') . $this->croffer_model->error, 'error');
+			}
+		}
+		Assets::add_module_js('wizard', 'croffer_js.js');
+		// Loading data from crop module
+		$data['user_crops_data'] = $this->crop->show_users_crop_list_raw($this->current_user->id);
+		$data['mylang'] = $this->current_user->language;
+		// print_r($user_crops_data);
 		
 		$this->load->view('wizard/wizard/header');
-		$this->load->view('wizard/wizard/view_farmer_three');
+		$this->load->view('wizard/wizard/view_farmer_three',$data);
 		$this->load->view('wizard/wizard/footer');
 		/*Template::set_view('wizard/wizard/view_farmer_three');
 		Template::render();*/

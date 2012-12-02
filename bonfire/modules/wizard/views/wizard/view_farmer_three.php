@@ -1,7 +1,6 @@
 <div class="row-fluid">
 	<div class="span12">
-
-	
+		
 		<div id="wizard">
 			<!-- <div class="page-header">
 				<h3>Οδηγός <small>συμπλήρωσης στοιχείων λογαριασμού <b>Παραγωγού</b></small></h3>
@@ -63,6 +62,30 @@
 						        </div>
 						    </div> -->
 
+						<?php if(isset($message)) :?>
+						    <div class="alert alert-success">
+							    <button type="button" class="close" data-dismiss="alert">×</button>
+							    <strong>OK!</strong> <?php echo $message; ?>
+						    </div>
+						<?php endif; ?>
+
+
+<button class="btn source" onclick="$.pnotify({
+						title: 'No History Notice',
+						text: 'I\'m not part of the notice history, so if you redisplay the last message, it won\'t be me.',
+						type: 'success',
+						history: false
+					});">No History Notice</button>
+
+
+					<p>
+              <label for="amount">Volume:</label>
+              <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" readonly="readonly"/>
+            </p>
+
+            <div id="slider" style="width:200px;"></div>
+
+
 						    
 						<?php echo form_open($this->uri->uri_string(), 'class="form-horizontal"'); ?>
 						    <fieldset>
@@ -78,7 +101,7 @@
 						                    <option value="0"><?php echo lang('crop_add_crop_select'); ?></option>
 						                    <?php foreach ($user_crops_data as $record) : ?><?php echo $record->crop; ?>
 						                        <?php if($mylang == "greek"): ?>
-						                            <option value="<?php echo $record->crop_id?>"><?php echo  "(" . $record->crop_id . ") " .$record->crops_gr . " - " . $record->crop_variety_gr . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
+						                            <option value="<?php echo $record->crop_id?>"><?php echo $record->crops_gr . " - " . $record->crop_variety_gr . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
 						                            </option>
 						                        <?php else : ?> 
 						                            <option value="<?php echo $record->crop_id?>"><?php echo  "(" . $record->crop_id . ") " .$record->crops_en . " - " . $record->crop_variety_en . " - (" . $record->hectar . " " . lang('croffer_hectar') . ")";?>
@@ -179,15 +202,12 @@
 						        <div class="form-actions">
 						            <?php echo anchor('wizard/wizard/wizard_farmer_two',  '<i class="icon-circle-arrow-left"></i>&nbsp;Πίσω', 'class=""'); ?>&nbsp;&nbsp;
 							        <?php echo anchor('/gfusers/gfusers',  'Παράβλεψη', 'class=""'); ?>&nbsp;&nbsp;
-							        <?php echo anchor('gfusers/gf_my_profile',  'Αποθήκευση και ολοκλήρωση', 'class="btn btn-primary"'); ?>
-						            <!-- <input type="submit" id="save" name="save" class="btn btn-primary" value="<?php //echo lang('croffer_add') ?>" />
-						             <?php //echo anchor(SITE_AREA .'/content/croffer', lang('croffer_cancel'), 'class="btn"'); ?> -->
-						            
+							        <?php //echo anchor('gfusers/gf_my_profile',  'Αποθήκευση και ολοκλήρωση', 'class="btn btn-primary"'); ?>
+						            <input type="submit" id="save" name="save" class="btn btn-primary" value="<?php echo lang('croffer_add') ?>" />
+						             <?php //echo anchor(SITE_AREA .'/content/croffer', lang('croffer_cancel'), 'class="btn"'); ?>
 						        </div>
 						    </fieldset>
 						    <?php echo form_close(); ?>
-
-
 						</div>
 					
 					</div>

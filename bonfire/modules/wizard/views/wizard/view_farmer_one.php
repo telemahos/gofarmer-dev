@@ -45,7 +45,7 @@
 						<div class="control-group <?php echo form_error('state') ? 'error' : ''; ?>">
 					        <?php echo form_label(lang("gfusers_state"), 'state', array('class' => "control-label") ); ?>
 					        <div class='controls'>
-					        	<select data-placeholder="Επιλέξτε Περιοχή..." class="chzn-select span7" tabindex="2" name="state">
+					        	<select data-placeholder="Επιλέξτε Περιοχή..." class="chzn-select span4" tabindex="2" name="state">
 									<option value=""></option> 
 									<option value="Αττική">Αττική</option> 
 									<option value="Ημαθία">Ημαθία</option> 
