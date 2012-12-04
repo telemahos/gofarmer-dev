@@ -4,8 +4,10 @@
 	    	<?php if(empty($gfusers->image) == false) : ?>
 	      		<img src="<?php echo base_url('assets/images/users/thumbs') . '/' . $gfusers->image ?>" width='260' height='170' class="img-polaroid">
 			<?php else : ?>
-					<a href="#add_image" data-toggle='modal' title='Προσθήκη Φωτογραφίας'><img  src="<?php echo site_url('images/non-user.jpg') ?>" width='260' height='170'>
+					<a href="#add_image" data-toggle='modal' title='Προσθήκη Φωτογραφίας'><img data-src="holder.js/260x170/text:[GoFarmer]/simple">
 					</a>
+					<!-- <a href="#add_image" data-toggle='modal' title='Προσθήκη Φωτογραφίας'><img  src="<?php //echo site_url('images/non-user.jpg') ?>" width='260' height='170'>
+					</a> -->
 			<?php endif; ?>
 			<!-- Users Name and Lastname  -->
 			<div class="left-bar-widget-name">

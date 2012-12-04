@@ -51,6 +51,8 @@
   <script>window.jQuery || document.write('<script src="<?php echo js_path(); ?>jquery.js"><\/script>')</script>
 
   <?php Assets::add_js( 'jquery.pnotify.min.js' ); ?>
+  <?php Assets::add_js( 'holder.js' ); ?>
+
 
   <!-- This would be a good place to use a CDN version of jQueryUI if needed -->
 	<?php echo Assets::js(); ?>

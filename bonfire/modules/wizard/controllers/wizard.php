@@ -13,9 +13,13 @@ class wizard extends Authenticated_Controller {
 		$this->load->model('wizard_model', null, true);
 		$this->lang->load('wizard');
 		
+		// Adding pnotify fir notifications
 		Assets::add_js( 'jquery.pnotify.min.js' );
 		Assets::add_css( 'jquery.pnotify.default.css'); 
 		Assets::add_css( 'jquery.pnotify.default.icons.css');
+
+		//Add validation for the form
+		Assets::add_js('jqBootstrapValidation.js');
 
 		Assets::add_css( 'chosen.css' ); 
 		Assets::add_js( 'chosen.jquery.min.js' );
@@ -151,6 +155,7 @@ class wizard extends Authenticated_Controller {
 		}
 
 		Assets::add_module_js('wizard', 'crop_js.js');
+
 		$data['crop_crops'] = $this->crop_model->get_crop_list();
 		$data['mylang'] = $this->current_user->language;
 		
@@ -185,7 +190,7 @@ class wizard extends Authenticated_Controller {
 				// Log the activity
 				$this->activity_model->log_activity($this->current_user->id, lang('croffer_act_create_record').': ' . $insert_id . ' : ' . $this->input->ip_address(), 'croffer');
 
-				// Template::set_message(lang('croffer_create_success'), 'success');
+				Template::set_message(lang('croffer_create_success'), 'success');
 				// Template::set_view('croffer/croffer/view_add_croffer');
 				// redirect($this->uri->uri_string());
 				$inline  = "$.pnotify({ title: 'Η προσφορά καταχωρήθηκε', text: 'Θέλετε να κάνετε άλλη;', type: 'success', history: false});";
@@ -195,9 +200,9 @@ class wizard extends Authenticated_Controller {
 			}
 			else
 			{
-				$inline  = "$.pnotify({ title: 'Λάθος', text: 'Προσπαθήστε ξανά;', type: 'error', history: false});";
-				Assets::add_js( $inline, 'inline' );
-				// Template::set_message(lang('croffer_create_failure') . $this->croffer_model->error, 'error');
+				// $inline  = "$.pnotify({ title: 'Λάθος', text: 'Προσπαθήστε ξανά;', type: 'error', history: false});";
+				// Assets::add_js( $inline, 'inline' );
+				Template::set_message(lang('croffer_create_failure') . $this->croffer_model->error, 'error');
 			}
 		}
 		Assets::add_module_js('wizard', 'croffer_js.js');

@@ -104,7 +104,7 @@
 					            <?php echo form_label(lang('crop_add_hectar'), 'hectar', array('class' => "control-label")); ?>
 					            <div class='controls'>
 					              <div class="input-append">
-					       	 	      <input id="hectar" type="text" name="hectar" maxlength="10" value="" placeholder='Αριθμός σε στρέμματα' /><span class="add-on">Στρ.</span>
+					       	 	      <input id="hectar" type="number" name="hectar" value="" placeholder='Αριθμός σε στρέμματα' data-validation-number-message="Λάθος! Μόνο δεκαδικοί (π.χ. 13.8) και ακέραιοι αριθμοί επιτρέπονται!" /><span class="add-on">Στρ.</span>
 					              </div>
 					              <span class="help-inline" id="result"><?php echo lang('crop_add_input_hectar_help') ?></span>
 					            </div>  

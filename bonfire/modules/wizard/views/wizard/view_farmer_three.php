@@ -62,27 +62,20 @@
 						        </div>
 						    </div> -->
 
-						<?php if(isset($message)) :?>
-						    <div class="alert alert-success">
-							    <button type="button" class="close" data-dismiss="alert">×</button>
-							    <strong>OK!</strong> <?php echo $message; ?>
-						    </div>
-						<?php endif; ?>
-
 						<!-- Test Noify -->
-						<button class="btn source" onclick="$.pnotify({
+						<!-- <button class="btn source" onclick="$.pnotify({
 							title: 'No History Notice',
 							text: 'I\'m not part of the notice history, so if you redisplay the last message, it won\'t be me.',
 							type: 'success',
 							history: false
-						});">No History Notice</button>
+						});">No History Notice</button> -->
 
 						<!-- Test slider -->
-						<p>
+						<!-- <p>
 			              <label for="amount">Volume:</label>
 			              <input type="text" id="amount" class='span4' readonly="readonly"/>
 			            </p>
-	            		<div id="slider" style="width:200px;"></div>
+	            		<div id="slider" style="width:200px;"></div> -->
 
 
 						    
@@ -118,7 +111,7 @@
 						        <div class="control-group <?php echo form_error('croffer_quantity') ? 'error' : ''; ?>">
 						            <?php echo form_label(lang('croffer_quantity'), 'croffer_quantity', array('class' => "control-label") ); ?>
 						            <div class='controls'>
-						                <input class='input-small' id="croffer_quantity" type="text" name="croffer_quantity" maxlength="11" value="<?php echo set_value('croffer_quantity', isset($croffer['croffer_quantity']) ? $croffer['croffer_quantity'] : ''); ?>"  /> <span class='muted'><small>&nbsp;<?php echo lang('croffer_in') ?>&nbsp;</small></span>
+						                <input class='input-small' id="croffer_quantity" type="number" name="croffer_quantity" maxlength="11" data-validation-number-message="Λάθος! Μόνο αριθμοί επιτρέπονται!" value="<?php echo set_value('croffer_quantity', isset($croffer['croffer_quantity']) ? $croffer['croffer_quantity'] : ''); ?>"  /> <span class='muted'><small>&nbsp;<?php echo lang('croffer_in') ?>&nbsp;</small></span>
 						                <select class='input-small' name="croffer_quantity_type_id" id='croffer_quantity_type_id'>
 						                    <option value='1'><?php echo lang('croffer_quantity_form_1'); ?></option>
 						                    <option value='2'><?php echo lang('croffer_quantity_form_2'); ?></option>
@@ -162,7 +155,7 @@
 						        <div class="control-group <?php echo form_error('croffer_price') ? 'error' : ''; ?>">
 						            <?php echo form_label(lang('croffer_price'), 'croffer_price', array('class' => "control-label") ); ?>
 						            <div class='controls'>
-						                <input class='input-small' id="croffer_price" type="text" name="croffer_price" maxlength="11" value="<?php echo set_value('croffer_price', isset($croffer['croffer_price']) ? $croffer['croffer_price'] : ''); ?>"  /> <span class='muted'>&nbsp;<small><?php echo lang('croffer_per') ?>&nbsp; </small></span>
+						                <input class='input-small' id="croffer_price" type="number" data-validation-number-message="Λάθος! Μόνο δεκαδικοί (π.χ. 13.8) και ακέραιοι αριθμοί επιτρέπονται!" name="croffer_price" maxlength="11" value="<?php echo set_value('croffer_price', isset($croffer['croffer_price']) ? $croffer['croffer_price'] : ''); ?>"  /> <span class='muted'>&nbsp;<small><?php echo lang('croffer_per') ?>&nbsp; </small></span>
 						                <select class='input-small' name="croffer_price_per" id='croffer_price_per'>
 						                    <option value='1'><?php echo lang('croffer_price_per_1'); ?></option>
 						                    <option value='2'><?php echo lang('croffer_price_per_2'); ?></option>

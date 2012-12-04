@@ -1,3 +1,4 @@
+// FILE: crop_js.js
 // AJAX CALL FOR SELECT BOX
 // Crop select from wizard
     $("#variety").attr('disabled','disabled');
@@ -36,3 +37,7 @@
 			}
 		});
 	});
+
+	// jqValidation
+ 	$("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
+ 	// $("input").not("[type=submit]").jqBootstrapValidation();
