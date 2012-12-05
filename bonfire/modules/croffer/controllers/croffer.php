@@ -19,7 +19,7 @@ class croffer extends Authenticated_Controller {
 		$this->load->module('messages');
 
 		// Custom MODULE javascript
-		Assets::add_module_js('croffer', 'croffer.js');
+		// Assets::add_module_js('croffer', 'croffer.js');
 
 		if ($this->auth->is_logged_in() === TRUE)
 		{

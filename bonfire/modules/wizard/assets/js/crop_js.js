@@ -39,5 +39,5 @@
 	});
 
 	// jqValidation
- 	$("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
- 	// $("input").not("[type=submit]").jqBootstrapValidation();
+ 	// $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
+ 	$("[type=number]").not("[type=submit]").jqBootstrapValidation();

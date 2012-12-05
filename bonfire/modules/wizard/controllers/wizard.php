@@ -20,6 +20,8 @@ class wizard extends Authenticated_Controller {
 
 		//Add validation for the form
 		Assets::add_js('jqBootstrapValidation.js');
+		// $inline = '$("[type=number]").not("[type=submit]").jqBootstrapValidation();';
+		// Assets::add_js( $inline, 'inline' );
 
 		Assets::add_css( 'chosen.css' ); 
 		Assets::add_js( 'chosen.jquery.min.js' );
@@ -153,7 +155,7 @@ class wizard extends Authenticated_Controller {
 				Template::set_message(lang('crop_create_failure') . $this->crop_model->error, 'error');
 			}
 		}
-
+		Assets::clear_cache();
 		Assets::add_module_js('wizard', 'crop_js.js');
 
 		$data['crop_crops'] = $this->crop_model->get_crop_list();
@@ -205,6 +207,7 @@ class wizard extends Authenticated_Controller {
 				Template::set_message(lang('croffer_create_failure') . $this->croffer_model->error, 'error');
 			}
 		}
+		Assets::clear_cache();
 		Assets::add_module_js('wizard', 'croffer_js.js');
 		// Loading data from crop module
 		$data['user_crops_data'] = $this->crop->show_users_crop_list_raw($this->current_user->id);

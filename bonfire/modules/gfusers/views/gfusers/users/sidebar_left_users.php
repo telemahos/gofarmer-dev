@@ -1,6 +1,10 @@
 <div class=''>
 	<div class=' left-bar-widget'>
-		<img src="<?php echo base_url('assets/images/users/thumbs') . '/' . $gfusers->image ?>" width='260' height='170' class="img-polaroid">
+		<?php if(empty($gfusers->image) == false) : ?>
+			<img src="<?php echo base_url('assets/images/users/thumbs') . '/' . $gfusers->image ?>" width='260' height='170' class="img-polaroid">
+		<?php else : ?>
+			<img data-src="holder.js/260x170/text:[GoFarmer]/simple">
+		<?php endif; ?>
 		<div class="left-bar-widget-name">
 			<?php if(empty($gfusers->name) == false) : echo ' <strong>' . $gfusers->name . '</strong>'; endif;
 			if(empty($gfusers->last_name) == false) : echo '<strong> ' . $gfusers->last_name . '</strong>'; endif; ?>

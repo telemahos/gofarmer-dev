@@ -1,9 +1,6 @@
 // FILE: croffer_js.js
 
 
-// jqValidation
-    // $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
-    $("input,select").not("[type=submit]").jqBootstrapValidation();
 
 $('#croffer_release_date').datepicker({ dateFormat: 'd M, yy'});
 // $('#croffer_release_date').datepicker({ dateFormat: 'dd-mm-yy'});
@@ -36,4 +33,6 @@ $("select#croffer_crop_id").change( function() {
     // });
     // $("#amount").val($("#slider").slider("value"));
 
-    
+    // jqValidation
+    // $("input[type=number],select,textarea").not("[type=submit]").jqBootstrapValidation();
+    $("input[type=number],select").not("[type=submit]").jqBootstrapValidation();
