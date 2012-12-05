@@ -51,4 +51,26 @@ class wizard_guests extends Authenticated_Controller {
 		$this->load->view('wizard/wizard/footer');
 	}
 
+	//--------------------------------------------------------------------
+
+
+	/*
+		Method: wizard_guests_three()
+
+		Displays a list of form data.
+	*/
+	public function wizard_guests_three()
+	{
+		//Add JCrop Library
+		Assets::add_css( 'jquery.Jcrop.min.css' ); 
+		Assets::add_js( 'jquery.Jcrop.min.js' );
+		Assets::clear_cache();
+		Assets::add_module_js('wizard','jcrop_js.js' );
+
+
+		$this->load->view('wizard/wizard/header');
+		$this->load->view('wizard/wizard_guests/view_guest_three');
+		$this->load->view('wizard/wizard/footer');
+	}
+
 }

@@ -9,18 +9,18 @@
 			    	<div class="bar" style="width: 0%;"></div>
 			    </div>
 			</div>	
-			<div class="span2 ">
+			<div class="span2 muted">
 				<h4>2. Βήμα </h4>
 				Προϊόντα που σε ενδιαφέρουν
-				<div class="progress progress-striped active">
-			    	<div class="bar" style="width: 100%;"></div>
+				<div class="progress ">
+			    	<div class="bar" style="width: 0%;"></div>
 			    </div>
 			</div>	
-			<div class="span2 muted">
+			<div class="span2 ">
 				<h4>3. Βήμα </h4>
 				Μεταφόρτωση εικόνας
-				<div class="progress">
-			    	<div class="bar" style="width: 0%;"></div>
+				<div class="progress progress-striped active">
+			    	<div class="bar" style="width: 100%;"></div>
 			    </div>
 			</div>	
 		</div> <!-- End of id="wizard" -->
@@ -56,22 +56,11 @@
 						<legend></legend>
 							<!-- Add the products guest likes -->
 							<div class="control-group <?php echo form_error('state') ? 'error' : ''; ?>">
-						        <?php echo form_label("Προϊόντα", 'state', array('class' => "control-label") ); ?>
+						        <?php echo form_label("Φωτογραφία", 'state', array('class' => "control-label") ); ?>
 						        <div class='controls'>
-						        	<select data-placeholder="Επιλέξτε Προϊόντα..." multiple class="chzn-select" tabindex="2" name="state">
-										<option value=""></option> 
-										<option value="ΑΓΓΟΎΡΙΑ">ΑΓΓΟΎΡΙΑ</option> 
-										<option value="ΝΤΟΜΆΤΕΣ">ΝΤΟΜΆΤΕΣ</option> 
-										<option value="ΜΑΝΙΤΑΡΙΑ">ΜΑΝΙΤΑΡΙΑ</option> 
-										<option value="ΓΑΛΑ">ΓΑΛΑ</option> 
-										<option value="ΣΑΛΙΓΚΑΡΙΑ">ΣΑΛΙΓΚΑΡΙΑ</option> 
-										<option value="ΡΟΔΑΚΙΝΑ">ΡΟΔΑΚΙΝΑ</option> 
-										<option value="ΑΧΛΑΔΙΑ">ΑΧΛΑΔΙΑ</option> 
-										<option value="ΜΗΛΑ">ΜΗΛΑ</option> 
-										<option value="ΝΕΚΤΑΡΙΝΙΑ">ΝΕΚΤΑΡΙΝΙΑ</option> 
-									</select>
-								    <!-- <input id="state" type="text" name="state" maxlength="255" value="<?php //echo set_value('state', isset($gfusers->state) ? $gfusers->state : ''); ?>"  /> -->
-								    <span class="help-inline"><?php echo form_error('state'); ?></span>
+						        	<img src="<?php echo base_url('assets/images/stcosmas.jpg');?>" id="target" />
+						        	<input type='file'>
+						        	<span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
 							    </div>
 						    </div>
 
