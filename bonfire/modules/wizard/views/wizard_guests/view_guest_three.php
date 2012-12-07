@@ -48,18 +48,27 @@
 					}
 					$id = isset($crop['id']) ? $crop['id'] : '';
 				?>
+				<div><?php if(isset($pics) ) : echo $pics; endif; ?></div>
+
 				<div class="">
 				    <h3>Προϊόντα που σε ενδιαφέρουν<?php // echo lang('croffer_title') ?></h3>
 				    <p>Επέλεξε τα προϊόντα που σε ενδιαφέρουν για να ενημερώνεσε από το GoFarmer</p>
-				    <form class="form-horizontal">
+				    <!-- <form class="form-horizontal"> -->
 				    	<fieldset>
 						<legend></legend>
 							<!-- Add the products guest likes -->
 							<div class="control-group <?php echo form_error('state') ? 'error' : ''; ?>">
 						        <?php echo form_label("Φωτογραφία", 'state', array('class' => "control-label") ); ?>
 						        <div class='controls'>
-						        	<img src="<?php echo base_url('assets/images/stcosmas.jpg');?>" id="target" />
-						        	<input type='file'>
+						        	<img src="<?php echo base_url('assets/images/3.jpg');?>" id="target" />
+						        	<form action="<?php $this->uri->uri_string(); ?>" method="post" onsubmit="return checkCoords();">
+										<input type="hidden" id="x" name="x" />
+										<input type="hidden" id="y" name="y" />
+										<input type="hidden" id="w" name="w" />
+										<input type="hidden" id="h" name="h" />
+										<input type="submit" value="Crop Image" />
+									</form>
+						        	<!-- <input type='file'> -->
 						        	<span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
 							    </div>
 						    </div>
@@ -77,7 +86,7 @@
 							</div>
 
 						</fieldset>
-				    </form>
+				    <!-- </form> -->
 				</div>
 
 			</div> <!-- End of well -->
