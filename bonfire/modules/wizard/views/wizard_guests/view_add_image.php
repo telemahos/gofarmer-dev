@@ -48,47 +48,43 @@
 					}
 					$id = isset($crop['id']) ? $crop['id'] : '';
 				?>
-				<div><?php if(isset($pics) ) : echo $pics; endif; ?></div>
 
 				<div class="">
-				    <h3>Προϊόντα που σε ενδιαφέρουν<?php // echo lang('croffer_title') ?></h3>
-				    <p>Επέλεξε τα προϊόντα που σε ενδιαφέρουν για να ενημερώνεσε από το GoFarmer</p>
+				    <h3>Επέλεξε μια μια φωτογραφία σου!<?php // echo lang('croffer_title') ?></h3>
+				    <!-- <p>Επέλεξε τα προϊόντα που σε ενδιαφέρουν για να ενημερώνεσε από το GoFarmer</p> -->
 				    <!-- <form class="form-horizontal"> -->
 				    	<fieldset>
 						<legend></legend>
 							<!-- Add the products guest likes -->
 							<div class="control-group <?php echo form_error('state') ? 'error' : ''; ?>">
-						        <?php echo form_label("Φωτογραφία", 'state', array('class' => "control-label") ); ?>
+						        <?php //echo form_label("Φωτογραφία", 'state', array('class' => "control-label") ); ?>
 						        <div class='controls'>
 						        	
-						        	<form action="<?php $this->uri->uri_string(); ?>" method="post" >
-						        		<!-- onsubmit="return checkCoords();" -->
-										<input type="hidden" id="x" name="x" />
-										<input type="hidden" id="y" name="y" />
-										<input type="hidden" id="x2" name="x2" />
-										<input type="hidden" id="y2" name="y2" />
-										<input type="hidden" id="w" name="w" />
-										<input type="hidden" id="h" name="h" />
-										<img src="<?php echo base_url('assets/images/3.jpg');?>" id="target" />
-										<input type="submit" name='submit' value="Crop Image" />
-									</form>
+						        	<?php echo form_open_multipart('wizard/wizard_guests/wizard_guests_three') ?>
+						        		<?php 
+											echo form_label('Φωτογραφία', 'userfile');									
+											$userfile = array(
+								              'name'        => 'userfile',
+								              'id'          => 'userfile',
+								              'placeholder' => 'Φωτογραφία2',
+								              'class' 		=> 'span8'
+								            );
+											echo form_upload($userfile);	
+										?>
+										<div class="form-actions">
+									        <?php echo anchor('wizard/wizard_guests',  '<i class="icon-circle-arrow-left"></i>&nbsp;Πίσω', 'class=""'); ?>&nbsp;&nbsp;
+									        <?php echo anchor('wizard/wizard_guests/wizard_guests_three',  'Παράβλεψη', 'class=""'); ?>&nbsp;&nbsp;
+									        <?php //echo anchor('wizard/wizard/wizard_farmer_two',  'Αποθήκευση και συνέχεια', 'class="btn btn-primary"'); ?>
+									        <input type="submit" name="submit" class="btn btn-primary" value="Αποθήκευση και συνέχεια" />
+											<?php //if ($this->auth->has_permission('Gfusers.Content.Delete')) : ?>
+										    <?php //endif; ?>
+										<!-- End of Form Actions -->
+										</div>
+						        	<?php echo form_close(); ?>
 						        	<!-- <input type='file'> -->
 						        	<span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
 							    </div>
 						    </div>
-
-						    <div class="form-actions">
-						    <!-- <div class="form-actions"> -->
-						        <?php echo anchor('wizard/wizard_guests',  '<i class="icon-circle-arrow-left"></i>&nbsp;Πίσω', 'class=""'); ?>&nbsp;&nbsp;
-						        <?php echo anchor('wizard/wizard_guests/wizard_guests_three',  'Παράβλεψη', 'class=""'); ?>&nbsp;&nbsp;
-						        <?php //echo anchor('wizard/wizard/wizard_farmer_two',  'Αποθήκευση και συνέχεια', 'class="btn btn-primary"'); ?>
-						        <input type="submit" name="save" class="btn btn-primary" value="Αποθήκευση και συνέχεια" />
-								<?php if ($this->auth->has_permission('Gfusers.Content.Delete')) : ?>
-							    <?php endif; ?>
-							<!-- </div> -->
-							<!-- End of Form Actions -->
-							</div>
-
 						</fieldset>
 				    <!-- </form> -->
 				</div>

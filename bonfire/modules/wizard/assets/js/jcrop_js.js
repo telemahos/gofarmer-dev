@@ -6,6 +6,7 @@ $('#target').Jcrop({
             setSelect:   [ 100, 100, 400, 300 ],
             aspectRatio: 4 / 3,
              boxWidth: 450, boxHeight: 400 ,
+             onChange: updateCoords,
              onSelect: updateCoords
         });
 
@@ -23,6 +24,8 @@ $('#target').Jcrop({
 			{
 				$('#x').val(c.x);
 				$('#y').val(c.y);
+				$('#x2').val(c.x2);
+				$('#y2').val(c.y2);
 				$('#w').val(c.w);
 				$('#h').val(c.h);
 			};
