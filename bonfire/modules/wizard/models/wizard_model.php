@@ -46,32 +46,39 @@ class Wizard_model extends BF_Model {
 
 		$user_info  = array('user_id'  => $user_id);
 		$data = array('image' => $image_data['file_name']);
+		// $data = $image_data['file_name'];
+		// return $data;
 
-		$config = array(
-			'source_image' => $image_data['full_path'],
-			'new_image' => $this->gallery_path . '/thumbs',
-			'maintain_ration' => true,
-			'master_dim' => 'auto',
-			// 'master_dim' => 'width',
-			// 'master_dim' => 'height',
-			// 'x_axis' => '0',
-			// 'y_axis' => '50',
-			// 'width' => '375',
-			// 'height' => '375'
-		);
+		// $config = array(
+		// 	'source_image' => $image_data['full_path'],
+		// 	'new_image' => $this->gallery_path . '/thumbs',
+		// 	'maintain_ration' => true,
+		// 	'master_dim' => 'auto',
+		// 	// 'master_dim' => 'width',
+		// 	// 'master_dim' => 'height',
+		// 	// 'x_axis' => '0',
+		// 	// 'y_axis' => '50',
+		// 	// 'width' => '375',
+		// 	// 'height' => '375'
+		// );
 
 		if($image_data['file_size'] == "") {
 			/*echo "<br>1";*/
 			$return = 'Problem'; 
 			
 		}
+		elseif($image_data['file_size'] > "1000") {
+			/*echo "<br>1";*/
+			$return = 'Problem'; 
+			
+		}
 		else {	
-			$this->load->library('image_lib', $config);
-			// $this->image_lib->resize(); crop()
-			if ( ! $this->image_lib->resize())
-			{
-			    echo $this->image_lib->display_errors();
-			}
+			// $this->load->library('image_lib', $config);
+			// // $this->image_lib->resize(); crop()
+			// if ( ! $this->image_lib->resize())
+			// {
+			//     echo $this->image_lib->display_errors();
+			// }
 			$this->load->module('gfusers');
 			$this->load->model('gfusers_model', null, true);
 			$return = $this->gfusers_model->update($user_info, $data);

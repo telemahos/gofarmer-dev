@@ -54,7 +54,6 @@ class Gfusers_model extends BF_Model {
 			'upload_path' => $this->gallery_path,
 			'file_name' => now() . '-' . $user_id,
 			'max_size' => '1000'
-			
 		);
 		
 		$this->load->library('upload', $config);

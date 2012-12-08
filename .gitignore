@@ -26,6 +26,7 @@ assets/cache/*
 !assets/cache/index.html
 bonfire/themes/gf/cache/*
 assets/images/users/*
+assets/images/temp_img/*
 
 # Ignore Custom config files
 bonfire/application/config/development/*

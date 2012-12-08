@@ -50,7 +50,7 @@
 				?>
 
 				<div class="">
-				    <h3>Επέλεξε μια μια φωτογραφία σου!<?php // echo lang('croffer_title') ?></h3>
+				    <h3>Επέλεξε μια μια φωτογραφία!<?php // echo lang('croffer_title') ?></h3>
 				    <!-- <p>Επέλεξε τα προϊόντα που σε ενδιαφέρουν για να ενημερώνεσε από το GoFarmer</p> -->
 				    <!-- <form class="form-horizontal"> -->
 				    	<fieldset>
@@ -60,7 +60,8 @@
 						        <?php //echo form_label("Φωτογραφία", 'state', array('class' => "control-label") ); ?>
 						        <div class='controls'>
 						        	
-						        	<?php echo form_open_multipart('wizard/wizard_guests/wizard_guests_three') ?>
+						        	<?php //echo form_open_multipart('wizard/wizard_guests/wizard_redirect_to_crop_image') ?>
+						        	<?php echo form_open_multipart($this->uri->uri_string());  ?>
 						        		<?php 
 											echo form_label('Φωτογραφία', 'userfile');									
 											$userfile = array(
@@ -75,7 +76,7 @@
 									        <?php echo anchor('wizard/wizard_guests',  '<i class="icon-circle-arrow-left"></i>&nbsp;Πίσω', 'class=""'); ?>&nbsp;&nbsp;
 									        <?php echo anchor('wizard/wizard_guests/wizard_guests_three',  'Παράβλεψη', 'class=""'); ?>&nbsp;&nbsp;
 									        <?php //echo anchor('wizard/wizard/wizard_farmer_two',  'Αποθήκευση και συνέχεια', 'class="btn btn-primary"'); ?>
-									        <input type="submit" name="submit" class="btn btn-primary" value="Αποθήκευση και συνέχεια" />
+									        <input type="submit" name="redirect" class="btn btn-primary" value="Αποθήκευση και συνέχεια" />
 											<?php //if ($this->auth->has_permission('Gfusers.Content.Delete')) : ?>
 										    <?php //endif; ?>
 										<!-- End of Form Actions -->

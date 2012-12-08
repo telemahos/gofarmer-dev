@@ -46,11 +46,11 @@
 				<td>
 					<?php if ($current_user->id == $record->user_id) : ?>
 						<a href="<?php echo site_url('gfusers/gf_my_profile'); ?>" title="<?php echo $record->username; ?>">
-							<img src="<?php echo base_url('assets/images/users/thumbs') . '/' . $record->image ?>" width='45' height='45' class="img-polaroid">
+							<img src="<?php echo base_url('assets/images/users/thumbs') . '/' . $record->image ?>" width='64' height='48' class="img-polaroid">
 						</a>
 					<?php else : ?>
 						<a href="<?php echo site_url('gfusers/gf_users_profile/users_profile'); ?><?php echo '/'. $record->id; ?>" title="<?php echo $record->username; ?>">
-							<img src="<?php echo base_url('assets/images/users/thumbs') . '/' . $record->image ?>" width='45' height='45' class="img-polaroid">
+							<img src="<?php echo base_url('assets/images/users/thumbs') . '/' . $record->image ?>" width='64' height='48' class="img-polaroid">
 						</a>
 					<?php endif; ?>
 					
