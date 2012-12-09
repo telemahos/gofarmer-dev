@@ -80,10 +80,13 @@ class wizard_guests extends Authenticated_Controller {
 		if ($this->input->post('submit'))
 		{
 
-			$targ_w = 270;
-			$targ_h = 202;
-			$jpeg_quality = 70;
-			$src = base_url('assets/images/3.jpg');
+			// $targ_w = 270;
+			// $targ_h = 202;
+			$targ_w = 260;
+			$targ_h = 195;
+			// $targ_w = $targ_h = 150;
+			$jpeg_quality = 90;
+			$src = base_url('assets/images/4.jpg');
 			$img_r = imagecreatefromjpeg($src);
 			$dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
 

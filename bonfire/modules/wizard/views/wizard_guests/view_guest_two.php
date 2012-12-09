@@ -78,7 +78,7 @@
 						    <div class="form-actions">
 						    <!-- <div class="form-actions"> -->
 						        <?php echo anchor('wizard/wizard_guests',  '<i class="icon-circle-arrow-left"></i>&nbsp;Πίσω', 'class=""'); ?>&nbsp;&nbsp;
-						        <?php echo anchor('wizard/wizard_guests/wizard_add_image',  'Παράβλεψη', 'class=""'); ?>&nbsp;&nbsp;
+						        <?php echo anchor('wizard/wizard_guests/wizard_guests_three',  'Παράβλεψη', 'class=""'); ?>&nbsp;&nbsp;
 						        <?php //echo anchor('wizard/wizard/wizard_farmer_two',  'Αποθήκευση και συνέχεια', 'class="btn btn-primary"'); ?>
 						        <input type="submit" name="save" class="btn btn-primary" value="Αποθήκευση και συνέχεια" />
 								<?php if ($this->auth->has_permission('Gfusers.Content.Delete')) : ?>

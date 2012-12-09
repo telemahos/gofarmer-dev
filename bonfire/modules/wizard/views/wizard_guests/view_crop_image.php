@@ -71,13 +71,13 @@
 										<input type="hidden" id="y2" name="y2" />
 										<input type="hidden" id="w" name="w" />
 										<input type="hidden" id="h" name="h" /> -->
-										<label>X1 <input type="text" size="4" id="x" name="x" /></label>
-									      <label>Y1 <input type="text" size="4" id="y" name="y" /></label>
+										<label>X1 <input type="text" size="4" id="x1" name="x1" /></label>
+									      <label>Y1 <input type="text" size="4" id="y1" name="y1" /></label>
 									      <label>X2 <input type="text" size="4" id="x2" name="x2" /></label>
 									      <label>Y2 <input type="text" size="4" id="y2" name="y2" /></label>
 									      <label>W <input type="text" size="4" id="w" name="w" /></label>
 									      <label>H <input type="text" size="4" id="h" name="h" /></label>
-										<img src="<?php echo base_url('assets/images/temp_img') . '/'. $gfusers->image;?>" id="target" onsubmit="return checkCoords();"/>
+										<img src="<?php echo base_url('assets/images/temp_img') . '/'. $gfusers->image;?>" id="target" /> <!-- onsubmit="return checkCoords();" -->
 										<!-- <div style="width:100px;height:100px;overflow:hidden;">
             <img src="<?php //echo base_url('assets/images/temp_img') . '/'. $gfusers->image;?>" id="preview" alt="Preview" class="jcrop-preview" />
           </div> -->

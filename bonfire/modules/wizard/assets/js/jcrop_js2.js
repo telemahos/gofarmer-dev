@@ -24,8 +24,8 @@ $('#target').Jcrop({
 
 			function updateCoords(c)
 			{
-				$('#x').val(c.x);
-				$('#y').val(c.y);
+				$('#x').val(c.x1);
+				$('#y').val(c.y1);
 				$('#x2').val(c.x2);
 				$('#y2').val(c.y2);
 				$('#w').val(c.w);

@@ -60,16 +60,14 @@
 							<div class="control-group <?php echo form_error('state') ? 'error' : ''; ?>">
 						        <?php echo form_label("Φωτογραφία", 'state', array('class' => "control-label") ); ?>
 						        <div class='controls'>
-						        	
-						        	<form action="<?php $this->uri->uri_string(); ?>" method="post" >
-						        		<!-- onsubmit="return checkCoords();" -->
+						        	<img src="<?php echo base_url('assets/images/4.jpg');?>" id="cropbox" />
+						        	<form action="<?php $this->uri->uri_string(); ?>" method="post" onsubmit="return checkCoords();" >
+						        		<!-- -->
 										<input type="hidden" id="x" name="x" />
 										<input type="hidden" id="y" name="y" />
-										<input type="hidden" id="x2" name="x2" />
-										<input type="hidden" id="y2" name="y2" />
 										<input type="hidden" id="w" name="w" />
 										<input type="hidden" id="h" name="h" />
-										<img src="<?php echo base_url('assets/images/3.jpg');?>" id="target" />
+										
 										<input type="submit" name='submit' value="Crop Image" />
 									</form>
 						        	<!-- <input type='file'> -->
