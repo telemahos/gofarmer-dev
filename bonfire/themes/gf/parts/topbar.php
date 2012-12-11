@@ -112,6 +112,7 @@
     						<?php endif; ?>
 						</a></li>
 						<li><a href="<?php echo site_url('messages/mails');?>" title='Δείτε τις ειδοποιήσεις'><i class="icon-flag"></i> </a></li>
+						<li><a href="<?php echo site_url('messages/mails');?>" title='Δείτε τις συνεργασίες'><i class="icon-briefcase"></i> </a></li>
 
 					<?php endif; ?>
 				</ul>
