@@ -20,7 +20,7 @@
 						<li><a href="<?php echo site_url('gfusers/gf_my_profile');?>">Αρχική</a></li>
 						<li class="dropdown" >
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<?php echo lang('bf_nav_crops') ?>
+								<?php //echo lang('bf_nav_crops') ?> Προϊόντα
 								<b class="caret"></b></a>
 
 								<ul class="dropdown-menu">
@@ -59,10 +59,11 @@
 											<i class="icon-tasks"></i>  <?php echo lang('bf_nav_crops') ?>Ζήτηση
 										</a>
 									</li>
+									<li><a href="<?php echo site_url('croffer/create');?>">Προσφορά</a></li>
+									<li><a href="<?php echo site_url('');?>">Ζήτηση</a></li>
 								</ul>
 						</li>
-						<li><a href="<?php echo site_url('croffer/create');?>">Προσφορά</a></li>
-						<li><a href="<?php echo site_url('');?>">Ζήτηση</a></li>
+						
 						<li class="dropdown" >
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<?php //echo lang('bf_nav_crops') ?>Περισσότερα
